@@ -1,1 +1,1 @@
-# generative-art
+# Generative Art for All
