@@ -1,5 +1,5 @@
-## Generative Art for All
-<hr />
+# Generative Art for All
+
 ## Available Scripts
 
 In the project directory, you can run:
