@@ -1,25 +1,16 @@
-.showcase {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
+* {
+  font-family: "Montserrat", sans-serif;
 }
-.card {
-  padding: 50px;
-  border-radius: 20px;
-  cursor: pointer;
-  background-color: #fff2f2;
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
-    0 10px 10px -5px rgba(0, 0, 0, 0.04);
-}
-.card-link {
-  text-decoration: none;
-  color: #e4535e;
-  font-size: 30px;
-}
+
 .title {
-  font-size: 50px;
+  font-size: 70px;
   margin: 50px auto;
   text-align: center;
-  color: #e4535e;
-  text-shadow: 5px -1px 9px rgba(195, 115, 126, 1);
+  letter-spacing: 0.1em;
+  -webkit-text-fill-color: #fff2f2;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: #ff2457;
+  color: #fff;
+  text-shadow: 2px 2px #fec3e0, 4px 4px #ff77b9, 6px 6px #ff1f8f;
 }
