@@ -8,7 +8,7 @@ export default function Card(props) {
       <div className="front">
         <img className="thumbnail" src={image} />
         <h3 className="name">{name}</h3>
-        <p className='author'>By {author}</p>
+        <p className="author">By {author}</p>
       </div>
       <div className="back">
         <div className="art-info">
