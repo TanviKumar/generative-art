@@ -51,7 +51,8 @@ img {
   width: 16em;
 }
 .name {
-  margin: 0.75em 0;
+  margin-top: 0.75em;
+  margin-bottom: 0.5em;
   text-align: center;
 }
 /* Back div element */
@@ -94,6 +95,7 @@ img {
 }
 .card:hover .name {
   animation: artName 300ms ease-in-out forwards;
+  margin-bottom: 0;
 }
 .card:hover .back {
   transition: transform 250ms ease, opacity 150ms linear;
@@ -103,6 +105,11 @@ img {
 .card:hover .description {
   color: #4ebfd9;
   transition: color 100ms ease-out;
+}
+.card:hover .author {
+  animation: artName 300ms ease-in-out forwards;
+  text-align: right;
+  font-weight: 600;
 }
 @keyframes artName {
   0% {

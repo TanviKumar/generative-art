@@ -29,13 +29,13 @@ export default function sketch(p) {
         generate() {
             this.len *= 0.5; //So the tree becomes denser instead of larger.
             this.branchValue += 1; //To ensure increased thickness of trunk.
-            var nextSentence = "";
+            let nextSentence = "";
             for (let i = 0; i < this.sentence.length; i++) {
                 let current = this.sentence.charAt(i);
                 if (current == current.toLowerCase()) {
                     current = current.toUpperCase();
                 }
-                var found = false;
+                let found = false;
 
                 if (current == this.rules1.letter) {
                     found = true;
@@ -126,13 +126,13 @@ export default function sketch(p) {
     p.createCanvas(1200, 780)
     p.angleMode(p.RADIANS)
     let colorValue = p.color('#ffdedd')
-    p.setGradient(p.color(226, 181, 223), p.color(219, 255, 252));
+    setGradient(p.color(226, 181, 223), p.color(219, 255, 252));
   
     p.resetMatrix()
   
-    var plant = plantgen()
-    var plant1 = plantgen()
-    var plant2 = plantgen()
+    let plant = plantgen()
+    let plant1 = plantgen()
+    let plant2 = plantgen()
     let num = p.floor(p.random(4) + 4)
     plant2.rules1.becomes = 'F+1F-' + num.toString() + '[XY]+' + num.toString() + '[XY]'
     plant2.axiom = '-' + p.floor(p.random(20)).toString() + 'F'
@@ -159,22 +159,22 @@ export default function sketch(p) {
   function setGradient(c1, c2) {
     // noprotect
     p.noFill()
-    for (var y = 0; y < p.height; y++) {
-      var c = p.lerpColor(c1, c2, y / (p.height * 1.2))
+    for (let y = 0; y < p.height; y++) {
+      let c = p.lerpColor(c1, c2, y / (p.height * 1.2))
       p.stroke(c)
       p.line(0, y, p.width, y)
     }
   }
   
   function flower() {
-    var n = 5
-    var d = 3
-    var scl = p.floor(p.random(15) + 35)
-    var c = p.color('red')
+    let n = 5
+    let d = 3
+    let scl = p.floor(p.random(15) + 35)
+    let c = p.color('red')
     c.setAlpha(180)
     p.fill(c)
     p.noStroke()
-    var a = 0
+    let a = 0
     for(let i = 1; i <= d; ++i) {
       c.setAlpha(p.random(100) + 25)
       p.fill(c)
@@ -188,12 +188,12 @@ export default function sketch(p) {
   }
   
   function spot() {
-    var n = 5
-    var d = 3
-    var scl = p.floor(p.random(15) + 15)
-    var c = p.color('red')
+    let n = 5
+    let d = 3
+    let scl = p.floor(p.random(15) + 15)
+    let c = p.color('red')
     p.noStroke()
-    var a = 0
+    let a = 0
     for(let i = 1; i <= d; ++i) {
       c.setAlpha(p.random(100) + 25)
       p.fill(c)

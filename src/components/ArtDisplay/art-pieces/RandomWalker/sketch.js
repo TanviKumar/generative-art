@@ -1,7 +1,7 @@
 import * as dat from 'dat.gui';
-let Noise = require('noisejs');
 export default function sketch(p){
-let n = new Noise(Math.random());
+let Noise = require('noisejs');
+let n = new Noise.Noise(Math.random());
 const branches = [];
 
 p.setup = function() {
@@ -21,7 +21,7 @@ function reset () {
   p.resizeCanvas(1500, p.windowHeight);
   p.background("black");
   branches.length = 0;
-  n = new Noise(Math.random());
+  n = new Noise.Noise(Math.random());
   p.strokeWeight(uiWeight.getValue());
   for (let i=0; i<uiAmount.getValue(); i++) {
       branches.push(new Branch());

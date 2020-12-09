@@ -46,7 +46,7 @@ function drawCell(x, y) {
   p.rect(0, 0, cellSize, cellSize)
   for (let i = 0; i < 2500; ++i) { 
     let col = p.color(shades[p.floor(p.random(3)) + 0])
-    col.p.setAlpha(30)
+    col.setAlpha(30)
     p.fill(col)
     let rx = (p.floor(p.random(120)) + 30)
     //rx = rx - (rx%20)

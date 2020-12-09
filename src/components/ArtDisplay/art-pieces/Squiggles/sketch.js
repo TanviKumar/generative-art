@@ -33,7 +33,7 @@ p.draw = function() {
   p.background(255)
   for (let y = padding; y < p.height - 2 * padding; y += cellSize) {
     for (let x = padding; x < p.width - 2 * padding; x += cellSize) {
-      p.drawCell(x + cellSize/2, y + cellSize/2)
+      drawCell(x + cellSize/2, y + cellSize/2)
     }
   }
 }

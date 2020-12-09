@@ -2,12 +2,13 @@ import React from "react";
 import "./Card.css";
 import { Link } from "react-router-dom";
 export default function Card(props) {
-  const { name, desc, image, linkUrl, codeUrl } = props;
+  const { name, desc, image, linkUrl, codeUrl, author } = props;
   return (
     <div className="card">
       <div className="front">
         <img className="thumbnail" src={image} />
         <h3 className="name">{name}</h3>
+        <p className='author'>By {author}</p>
       </div>
       <div className="back">
         <div className="art-info">
