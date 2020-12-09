@@ -25,14 +25,14 @@ let centers = new Array(14)
 
 p.setup = function() {
   p.createCanvas(gridSize, gridSize)
-  p.rectMode(CENTER)
-  p.angleMode(DEGREES)
+  p.rectMode(p.CENTER)
+  p.angleMode(p.DEGREES)
   //noLoop()
   p.frameRate(10)
   for(let i = 0; i < row; i++) {
     centers[i] = new Array(14)
   }
-  for (i = 0; i < row; ++i) {
+  for (let i = 0; i < row; ++i) {
     for (let j = 0; j < row; ++j) {
       centers[i][j] = {}
       centers[i][j].x = 0

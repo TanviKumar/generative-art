@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState, useEffect} from "react";
 import "./DashBoard.css";
 import { Link } from "react-router-dom";
 import beyond_binary from "../../static/images/beyond_binary.png";
@@ -8,7 +8,17 @@ import cross from "../../static/images/cross.png";
 import Card from "../Card/Card";
 import Grid from "@material-ui/core/Grid";
 import { Container } from "@material-ui/core";
+import Axios from "axios";
 export default function DashBoard() {
+  const [data, setData] = useState([]);
+  useEffect(()=>{
+    Axios.get("./data.json").
+    then((res)=>{
+      setData(res.data);
+    })
+    .catch(err=>{});
+  },[]);
+  console.log(data);
   return (
     <div className="dashboard">
       <h1 className="title">Generative Art for All</h1>

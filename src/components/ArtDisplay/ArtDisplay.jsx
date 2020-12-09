@@ -9,6 +9,9 @@ import {
   Switch,
   useRouteMatch,
 } from "react-router-dom";
+import FlowerTree from "./art-pieces/FlowerTree/FlowerTree";
+import DinnerLight from './art-pieces/DinnerLight/DinnerLight';
+import Fade from './art-pieces/Fade/Fade';
 export default function ArtDisplay() {
   let match = useRouteMatch();
   return (
@@ -26,7 +29,19 @@ export default function ArtDisplay() {
         <Cross />
       </Route>
       <Route path={`${match.url}/cross_2`}>
-        <Cross2 />
+        <Cross2></Cross2>
+      </Route>
+      <Route path={`${match.url}/cross_2`}>
+        <Cross2></Cross2>
+      </Route>
+      <Route path={`${match.url}/dinner_light`}>
+        <DinnerLight></DinnerLight>
+      </Route>
+      <Route path={`${match.url}/fade`}>
+        <Fade></Fade>
+      </Route>
+      <Route path={`${match.url}/flower_tree`}>
+       <FlowerTree></FlowerTree>
       </Route>
     </Switch>
   );

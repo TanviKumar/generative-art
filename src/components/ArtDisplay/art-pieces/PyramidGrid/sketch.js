@@ -19,9 +19,9 @@ let gap = 10
 let shiftLimit = 15
 
 let shades = ['#FEDC97', '#B5B682', '#28666E', '#7C9885']
-let shades = ['#ffe5fa', '#ffb2ff', '#e500ff', '#c402e2']
-let shades = ['#e1ff00', '#ecf79b', '#f6ff7c', '#fff600']
-let shades = ['#ffaabb', '#ff7799', '#ffbbcc', '#ff3344']
+    shades = ['#ffe5fa', '#ffb2ff', '#e500ff', '#c402e2']
+    shades = ['#e1ff00', '#ecf79b', '#f6ff7c', '#fff600']
+    shades = ['#ffaabb', '#ff7799', '#ffbbcc', '#ff3344']
 
 p.setup = function() {
   p.createCanvas(gridSize, gridSize)
