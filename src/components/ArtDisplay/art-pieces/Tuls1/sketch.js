@@ -1,3 +1,4 @@
+import * as dat from 'dat.gui';
 export default function sketch(p) {
   // Padding around the canvas.
   let padding = 35;
@@ -38,7 +39,7 @@ export default function sketch(p) {
   };
 
   p.draw = function () {
-    p.background(shades[2]);
+    p.background(uiBg.getValue());
     for (let y = padding; y < p.height - 2 * padding; y += cellSize) {
       for (let x = padding; x < p.width - 2 * padding; x += cellSize) {
         drawCell(x + cellSize / 2, y + cellSize / 2);
@@ -53,7 +54,7 @@ export default function sketch(p) {
     p.noStroke();
     p.rectMode(p.CENTER);
     //rect(0, 0, cellSize, cellSize)
-    p.stroke(shades[1]);
+    p.stroke(uiShade.getValue());
     let v1, v2, v3, v4;
 
     // Top side
@@ -90,5 +91,27 @@ export default function sketch(p) {
     p.line(0, 0, -cellSize / 2, v4);
 
     p.pop();
+  }
+  class Tuls1{
+    constructor() {
+      this.Shade = '#B5B682';
+      this.Background = '#28666E';
+    }
+  }
+  const tuls1 = new Tuls1();
+  const gui = new dat.GUI();
+  let uiShade = gui.addColor(tuls1,'Shade');
+  let uiBg = gui.addColor(tuls1,'Background');
+  uiShade.onChange(()=>{
+    p.setup();
+    p.draw();
+  });
+  uiBg.onChange(()=>{
+    p.setup();
+    p.draw();
+  });
+  gui.close();
+  window.onpopstate = function(e){
+    gui.destroy();
   }
 }

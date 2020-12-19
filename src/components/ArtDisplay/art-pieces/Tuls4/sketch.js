@@ -1,3 +1,4 @@
+import * as dat from 'dat.gui'
 export default function sketch(p) {
   // Padding around the canvas.
   let padding = 35;
@@ -32,13 +33,13 @@ export default function sketch(p) {
     p.createCanvas(gridSize, gridSize);
     p.rectMode(p.CORNER);
     p.angleMode(p.DEGREES);
-    p.strokeWeight(2);
+    p.strokeWeight(uiStrokeWeight.getValue());
     p.noLoop();
     p.frameRate(2);
   };
 
   p.draw = function () {
-    p.background("black");
+    p.background(uiBg.getValue());
     for (let y = padding; y < p.height - 2 * padding; y += cellSize) {
       for (let x = padding; x < p.width - 2 * padding; x += cellSize) {
         drawCell(x + cellSize / 2, y + cellSize / 2);
@@ -65,7 +66,7 @@ export default function sketch(p) {
   line(-cellSize/2, cellSize/2, cellSize/2, cellSize/2)
   line(cellSize/2, -cellSize/2, cellSize/2, cellSize/2)
   strokeWeight(2)*/
-    p.stroke("red");
+    p.stroke(uiStroke.getValue());
 
     let t, r, b, l;
     t = 0;
@@ -119,5 +120,33 @@ export default function sketch(p) {
     }
 
     p.pop();
+  }
+  class Tuls4{
+    constructor() {
+      this.Stroke = '#FF0000';
+      this.StrokeWeight = 2;
+      this.Background = '#000';
+    }
+  }
+  const tuls4 = new Tuls4();
+  const gui = new dat.GUI();
+  let uiStroke = gui.addColor(tuls4,'Stroke');
+  let uiStrokeWeight = gui.add(tuls4,'StrokeWeight',1,10,1);
+  let uiBg = gui.addColor(tuls4,'Background');
+  uiStroke.onChange(()=>{
+    p.setup();
+    p.draw();
+  });
+  uiStrokeWeight.onChange(()=>{
+    p.setup();
+    p.draw();
+  });
+  uiBg.onChange(()=>{
+    p.setup();
+    p.draw();
+  });
+  gui.close();
+  window.onpopstate = function(e){
+    gui.destroy();
   }
 }

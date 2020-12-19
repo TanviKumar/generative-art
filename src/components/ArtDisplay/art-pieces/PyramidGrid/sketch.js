@@ -1,3 +1,4 @@
+import * as dat from 'dat.gui';
 export default function sketch(p) {
   // Padding around the canvas.
   let padding = 50;
@@ -95,5 +96,28 @@ export default function sketch(p) {
     //circle(0, 0, 7)
     p.pop();
     p.pop();
+  }
+  class PyramidGrid{
+    constructor() {
+      this.shiftLimit = 15;
+      this.frameRate = 2;
+    }
+  }
+  const pyramidGrid = new PyramidGrid();
+  const gui = new dat.GUI();
+  const uiShiftLimit = gui.add(pyramidGrid,'shiftLimit',1,50,1);
+  const uiFrameRate = gui.add(pyramidGrid,'frameRate',1,60,1);
+  uiShiftLimit.onChange(()=>{
+    p.setup();
+    shiftLimit = uiShiftLimit.getValue();
+    p.draw();
+  });
+  uiFrameRate.onChange(()=>{
+    p.setup();
+    p.draw();
+  });
+  gui.close();
+  window.onpopstate = function(e){
+    gui.destroy();
   }
 }

@@ -1,3 +1,4 @@
+import * as dat from 'dat.gui'
 export default function sketch(p) {
   // Padding around the canvas.
   let padding = 35;
@@ -38,7 +39,7 @@ export default function sketch(p) {
   };
 
   p.draw = function () {
-    p.background("black");
+    p.background(uiBg.getValue());
     for (let y = padding; y < p.height - 2 * padding; y += cellSize) {
       for (let x = padding; x < p.width - 2 * padding; x += cellSize) {
         drawCell(x + cellSize / 2, y + cellSize / 2);
@@ -52,7 +53,7 @@ export default function sketch(p) {
     let c1 = p.color(shades[0]);
     let c2 = p.color(shades[1]);
     let c3 = p.color(shades[2]);
-    c1.setAlpha(50);
+    c1.setAlpha(uiAlpha.getValue());
     p.fill(c1);
     //noStroke()
     p.rectMode(p.CENTER);
@@ -67,7 +68,7 @@ export default function sketch(p) {
     p.line(-cellSize / 2, cellSize / 2, cellSize / 2, cellSize / 2);
     p.line(cellSize / 2, -cellSize / 2, cellSize / 2, cellSize / 2);
     p.strokeWeight(2);
-    p.stroke("red");
+    p.stroke(uiStroke.getValue());
 
     let t, r, b, l;
     t = 0;
@@ -121,5 +122,33 @@ export default function sketch(p) {
     }
 
     p.pop();
+  }
+  class Tuls3{
+    constructor() {
+      this.Stroke = '#FF0000';
+      this.Alpha = 50;
+      this.Background = '#000';
+    }
+  }
+  const tuls3 = new Tuls3();
+  const gui = new dat.GUI();
+  let uiStroke = gui.addColor(tuls3,'Stroke');
+  let uiAlpha = gui.add(tuls3,'Alpha',1,200,1);
+  let uiBg = gui.addColor(tuls3,'Background');
+  uiStroke.onChange(()=>{
+    p.setup();
+    p.draw();
+  });
+  uiAlpha.onChange(()=>{
+    p.setup();
+    p.draw();
+  });
+  uiBg.onChange(()=>{
+    p.setup();
+    p.draw();
+  });
+  gui.close();
+  window.onpopstate = function(e){
+    gui.destroy();
   }
 }

@@ -1,3 +1,4 @@
+import * as dat from 'dat.gui';
 export default function sketch(p) {
   // Padding around the canvas.
   let padding = 15;
@@ -127,7 +128,7 @@ export default function sketch(p) {
   function drawArc1(radi) {
     p.strokeWeight(30);
     let c = p.color(shades[p.floor(p.random(3)) + 0]);
-    c.setAlpha(150);
+    c.setAlpha(uiAlpha.getValue());
     p.stroke(c);
     p.arc(hSize / 2, 0, radi, radi, 120, 240);
     p.arc(-hSize / 4, vSize / 2, radi, radi, 240, 0);
@@ -137,10 +138,26 @@ export default function sketch(p) {
   function drawArc2(radii1) {
     p.strokeWeight(30);
     let c = p.color(shades[p.floor(p.random(3)) + 0]);
-    c.setAlpha(150);
+    c.setAlpha(uiAlpha.getValue());
     p.stroke(c);
     p.arc(-hSize / 2, 0, radii1, radii1, 300, 60);
     p.arc(hSize / 4, vSize / 2, radii1, radii1, 180, 300);
     p.arc(hSize / 4, -vSize / 2, radii1, radii1, 60, 180);
+  }
+  class ThickHexTenPrint{
+    constructor() {
+      this.Alpha = 150;
+    }
+  }
+  const thickHexTenPrint = new ThickHexTenPrint();
+  const gui = new dat.GUI();
+  let uiAlpha = gui.add(thickHexTenPrint,'Alpha',1,200);
+  uiAlpha.onChange(()=>{
+    p.setup();
+    p.draw();
+  });
+  gui.close();
+  window.onpopstate = function(e){
+    gui.destroy();
   }
 }

@@ -13,7 +13,6 @@ export default function DashBoard() {
       })
       .catch((err) => {});
   }, []);
-  console.log(data);
   return (
     <div className="dashboard">
       <h1 className="title">Generative Art for All</h1>

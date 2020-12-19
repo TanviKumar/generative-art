@@ -1,3 +1,4 @@
+import * as dat from 'dat.gui'
 export default function sketch(p) {
   // Padding around the canvas.
   let padding = 15;
@@ -123,5 +124,21 @@ export default function sketch(p) {
     p.arc(-hSize / 2, 0, radii1, radii1, 300, 60);
     p.arc(hSize / 4, vSize / 2, radii1, radii1, 180, 300);
     p.arc(hSize / 4, -vSize / 2, radii1, radii1, 60, 180);
+  }
+  class TenPrintHex{
+    constructor() {
+      this.radii = 80;
+    }
+  }
+  const tenPrintHex = new TenPrintHex();
+  const gui = new dat.GUI();
+  let uiRadii = gui.add(tenPrintHex,'radii',40,200,1);
+  uiRadii.onChange(()=>{
+    p.setup();
+    p.draw();
+  });
+  hSize = uiRadii.getValue();
+  window.onpopstate = function(e){
+    gui.destroy();
   }
 }

@@ -1,3 +1,4 @@
+import * as dat from 'dat.gui'
 export default function sketch(p) {
   // Padding around the canvas.
   let padding = 45;
@@ -70,7 +71,7 @@ export default function sketch(p) {
     p.noStroke();
     p.rect(0, 0, cellSize, cellSize);
     p.stroke(0);
-    p.strokeWeight(4);
+    p.strokeWeight(uiStrokeWeight.getValue());
     let r = p.random();
     if (r < 0.25) {
       p.arc(-cellSize / 2, -cellSize / 2, cellSize * 2, cellSize * 2, 0, 90);
@@ -82,5 +83,18 @@ export default function sketch(p) {
       p.arc(-cellSize / 2, cellSize / 2, cellSize * 2, cellSize * 2, 270, 0);
     }
     p.pop();
+  }
+  class SoftTenPrint{
+    constructor() {
+      this.StrokeWeight = 4;
+    }
+  }
+  const softTenPrint = new SoftTenPrint();
+  const gui = new dat.GUI();
+  const uiStrokeWeight = gui.add(softTenPrint,"StrokeWeight",1,10,1);
+  uiStrokeWeight.onChange(p.draw);
+  gui.close();
+  window.onpopstate = function(e){
+    gui.destroy();
   }
 }

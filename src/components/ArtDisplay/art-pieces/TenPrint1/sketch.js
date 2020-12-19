@@ -1,4 +1,22 @@
+import * as dat from 'dat.gui';
 export default function sketch(p) {
+  // GUI Settings
+  class TenPrint{
+    constructor() {
+      this.cellSize = 30;
+    }
+  }
+  const tenPrint = new TenPrint();
+  const gui = new dat.GUI();
+  const uiCellSize =  gui.add(tenPrint,'cellSize',20,200,1);
+  uiCellSize.onChange(()=>{
+    p.setup();
+    p.draw();
+  });
+  gui.close();
+  window.onpopstate = function(e){
+    gui.destroy();
+  }
   // Padding around the canvas.
   let padding = 15;
 
@@ -6,7 +24,7 @@ export default function sketch(p) {
   let row = 24;
 
   // Size of grid cells (cellSize x cellSize).
-  let cellSize = 30;
+  let cellSize = uiCellSize.getValue();
   let gridSize = cellSize * row + padding * 2;
 
   // Probability of drawing an inner rectangle.

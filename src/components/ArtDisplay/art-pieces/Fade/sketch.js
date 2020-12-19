@@ -1,3 +1,4 @@
+import * as dat from 'dat.gui';
 export default function sketch(p) {
   // Padding around the canvas.
   let padding = 15;
@@ -46,7 +47,7 @@ export default function sketch(p) {
     p.rect(0, 0, cellSize, cellSize);
     for (let i = 0; i < 2500; ++i) {
       let col = p.color(shades[p.floor(p.random(3)) + 0]);
-      col.setAlpha(30);
+      col.setAlpha(uiAlpha.getValue());
       p.fill(col);
       let rx = p.floor(p.random(120)) + 30;
       //rx = rx - (rx%20)
@@ -58,5 +59,18 @@ export default function sketch(p) {
       if (i % 4 == 3) p.rect(cellSize - rx, cellSize - ry, rx, ry);
     }
     p.pop();
+  }
+  class Fade{
+    constructor() {
+      this.Alpha = 30;
+    }
+  }
+  const fade = new Fade();
+  const gui = new dat.GUI();
+  const uiAlpha = gui.add(fade,'Alpha',0,255);
+  uiAlpha.onChange(p.draw);
+  gui.close();
+  window.onpopstate = function(e){
+    gui.destroy();
   }
 }

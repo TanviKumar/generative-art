@@ -1,3 +1,4 @@
+import * as dat from 'dat.gui';
 export default function sketch(p) {
   // Padding around the canvas.
   let padding = 15;
@@ -16,7 +17,7 @@ export default function sketch(p) {
   let gap = 10;
 
   // Extent the square can shift from center
-  let shiftLimit = 1;
+  let shiftLimit;
 
   let shades = ["#FEDC97", "#B5B682", "#28666E", "#7C9885"];
 
@@ -125,5 +126,24 @@ export default function sketch(p) {
     p.circle(0, 0, 7);
     p.pop();
     p.pop();
+  }
+  class HazyPyramid{
+    constructor() {
+      this.shiftLimit = 1;
+      this.frameRate = 10;
+    }
+  }
+  const hazyPyramid = new HazyPyramid();
+  const gui = new dat.GUI();
+  const uiShiftLimit = gui.add(hazyPyramid,'shiftLimit',1,10,1);
+  const uiFrameRate = gui.add(hazyPyramid,'frameRate',1,60,1);
+  uiShiftLimit.onChange(()=>{
+    p.setup();
+    shiftLimit = uiShiftLimit.getValue();
+  });
+  uiFrameRate.onChange(p.setup);
+  gui.close();
+  window.onpopstate = function(e){
+    gui.destroy();
   }
 }
