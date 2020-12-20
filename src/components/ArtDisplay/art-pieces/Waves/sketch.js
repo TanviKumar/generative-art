@@ -1,4 +1,4 @@
-import * as dat from 'dat.gui';
+import * as dat from "dat.gui";
 export default function sketch(p) {
   // Padding around the canvas.
   let padding = 35;
@@ -203,26 +203,26 @@ export default function sketch(p) {
     }
     p.pop();
   }
-  class Waves{
+  class Waves {
     constructor() {
-      this.Background = '#28666E';
-      this.Stroke = '#FEDC97';
+      this.Background = "#28666E";
+      this.Stroke = "#FEDC97";
     }
   }
   const waves = new Waves();
   const gui = new dat.GUI();
-  let uiStroke = gui.addColor(waves,'Stroke');
-  let uiBg = gui.addColor(waves,'Background');
-  uiStroke.onChange(()=>{
+  let uiStroke = gui.addColor(waves, "Stroke");
+  let uiBg = gui.addColor(waves, "Background");
+  uiStroke.onChange(() => {
     p.setup();
     p.draw();
   });
-  uiBg.onChange(()=>{
+  uiBg.onChange(() => {
     p.setup();
     p.draw();
   });
   gui.close();
-  window.onpopstate = function(e){
+  window.onpopstate = function (e) {
     gui.destroy();
-  }
+  };
 }

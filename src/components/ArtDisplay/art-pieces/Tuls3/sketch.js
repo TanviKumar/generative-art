@@ -1,4 +1,4 @@
-import * as dat from 'dat.gui'
+import * as dat from "dat.gui";
 export default function sketch(p) {
   // Padding around the canvas.
   let padding = 35;
@@ -123,32 +123,32 @@ export default function sketch(p) {
 
     p.pop();
   }
-  class Tuls3{
+  class Tuls3 {
     constructor() {
-      this.Stroke = '#FF0000';
+      this.Stroke = "#FF0000";
       this.Alpha = 50;
-      this.Background = '#000';
+      this.Background = "#000";
     }
   }
   const tuls3 = new Tuls3();
   const gui = new dat.GUI();
-  let uiStroke = gui.addColor(tuls3,'Stroke');
-  let uiAlpha = gui.add(tuls3,'Alpha',1,200,1);
-  let uiBg = gui.addColor(tuls3,'Background');
-  uiStroke.onChange(()=>{
+  let uiStroke = gui.addColor(tuls3, "Stroke");
+  let uiAlpha = gui.add(tuls3, "Alpha", 1, 200, 1);
+  let uiBg = gui.addColor(tuls3, "Background");
+  uiStroke.onChange(() => {
     p.setup();
     p.draw();
   });
-  uiAlpha.onChange(()=>{
+  uiAlpha.onChange(() => {
     p.setup();
     p.draw();
   });
-  uiBg.onChange(()=>{
+  uiBg.onChange(() => {
     p.setup();
     p.draw();
   });
   gui.close();
-  window.onpopstate = function(e){
+  window.onpopstate = function (e) {
     gui.destroy();
-  }
+  };
 }

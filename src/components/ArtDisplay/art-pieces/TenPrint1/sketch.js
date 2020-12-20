@@ -1,4 +1,4 @@
-import * as dat from 'dat.gui';
+import * as dat from "dat.gui";
 export default function sketch(p) {
   // Padding around the canvas.
   let padding = 15;
@@ -19,7 +19,7 @@ export default function sketch(p) {
   // Extent the square can shift from center
   let shiftLimit = 1;
 
-  let shades = ['#FEDC97', "#B5B682", '#28666E', "#7C9885"];
+  let shades = ["#FEDC97", "#B5B682", "#28666E", "#7C9885"];
 
   p.setup = function () {
     p.createCanvas(gridSize, gridSize);
@@ -99,21 +99,21 @@ export default function sketch(p) {
     }
     p.pop();
   }
-    // GUI Settings
-    class TenPrint{
-      constructor() {
-        this.Shade1 = '#FEDC97';
-      }
+  // GUI Settings
+  class TenPrint {
+    constructor() {
+      this.Shade1 = "#FEDC97";
     }
-    const tenPrint = new TenPrint();
-    const gui = new dat.GUI();
-    const uiShade1 = gui.addColor(tenPrint,'Shade1');
-    uiShade1.onChange(()=>{
-      p.setup();
-      p.draw();
-    });
-    gui.close();
-    window.onpopstate = function(e){
-      gui.destroy();
-    }
+  }
+  const tenPrint = new TenPrint();
+  const gui = new dat.GUI();
+  const uiShade1 = gui.addColor(tenPrint, "Shade1");
+  uiShade1.onChange(() => {
+    p.setup();
+    p.draw();
+  });
+  gui.close();
+  window.onpopstate = function (e) {
+    gui.destroy();
+  };
 }

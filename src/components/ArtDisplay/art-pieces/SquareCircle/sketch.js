@@ -1,4 +1,4 @@
-import * as dat from 'dat.gui'
+import * as dat from "dat.gui";
 export default function sketch(p) {
   let rad = 150;
   let steps = 10;
@@ -38,26 +38,26 @@ export default function sketch(p) {
     p.circle(-100, -120, 150);
     p.circle(120, 120, 40);
   };
-  class SquareCircle{
+  class SquareCircle {
     constructor() {
-      this.Background = '#000';
+      this.Background = "#000";
       this.Alpha = 60;
     }
   }
   const squareCircle = new SquareCircle();
   const gui = new dat.GUI();
-  const uiBg = gui.addColor(squareCircle,'Background');
-  const uiAlpha = gui.add(squareCircle,'Alpha',1,200,1);
-  uiBg.onChange(()=>{
+  const uiBg = gui.addColor(squareCircle, "Background");
+  const uiAlpha = gui.add(squareCircle, "Alpha", 1, 200, 1);
+  uiBg.onChange(() => {
     p.setup();
     p.draw();
   });
-  uiAlpha.onChange(()=>{
+  uiAlpha.onChange(() => {
     p.setup();
     p.draw();
   });
   gui.close();
-  window.onpopstate = function(e){
+  window.onpopstate = function (e) {
     gui.destroy();
-  }
+  };
 }

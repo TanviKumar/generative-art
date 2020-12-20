@@ -1,4 +1,4 @@
-import * as dat from 'dat.gui';
+import * as dat from "dat.gui";
 export default function sketch(p) {
   // Padding around the canvas.
   let padding = 15;
@@ -60,17 +60,17 @@ export default function sketch(p) {
     }
     p.pop();
   }
-  class Fade{
+  class Fade {
     constructor() {
       this.Alpha = 30;
     }
   }
   const fade = new Fade();
   const gui = new dat.GUI();
-  const uiAlpha = gui.add(fade,'Alpha',0,255);
+  const uiAlpha = gui.add(fade, "Alpha", 0, 255);
   uiAlpha.onChange(p.draw);
   gui.close();
-  window.onpopstate = function(e){
+  window.onpopstate = function (e) {
     gui.destroy();
-  }
+  };
 }

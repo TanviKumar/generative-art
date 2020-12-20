@@ -1,4 +1,4 @@
-import * as dat from 'dat.gui';
+import * as dat from "dat.gui";
 export default function sketch(p) {
   // Padding around the canvas.
   let padding = 15;
@@ -127,7 +127,7 @@ export default function sketch(p) {
     p.pop();
     p.pop();
   }
-  class HazyPyramid{
+  class HazyPyramid {
     constructor() {
       this.shiftLimit = 1;
       this.frameRate = 10;
@@ -135,15 +135,15 @@ export default function sketch(p) {
   }
   const hazyPyramid = new HazyPyramid();
   const gui = new dat.GUI();
-  const uiShiftLimit = gui.add(hazyPyramid,'shiftLimit',1,10,1);
-  const uiFrameRate = gui.add(hazyPyramid,'frameRate',1,60,1);
-  uiShiftLimit.onChange(()=>{
+  const uiShiftLimit = gui.add(hazyPyramid, "shiftLimit", 1, 10, 1);
+  const uiFrameRate = gui.add(hazyPyramid, "frameRate", 1, 60, 1);
+  uiShiftLimit.onChange(() => {
     p.setup();
     shiftLimit = uiShiftLimit.getValue();
   });
   uiFrameRate.onChange(p.setup);
   gui.close();
-  window.onpopstate = function(e){
+  window.onpopstate = function (e) {
     gui.destroy();
-  }
+  };
 }

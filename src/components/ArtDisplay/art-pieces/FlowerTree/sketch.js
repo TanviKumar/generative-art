@@ -1,4 +1,4 @@
-import * as dat from 'dat.gui';
+import * as dat from "dat.gui";
 export default function sketch(p) {
   //Definition of the tree class.
   class tree {
@@ -190,7 +190,7 @@ export default function sketch(p) {
   }
   const gui = new dat.GUI();
   gui.close();
-  window.onpopstate = function(e){
+  window.onpopstate = function (e) {
     gui.destroy();
-  }
+  };
 }

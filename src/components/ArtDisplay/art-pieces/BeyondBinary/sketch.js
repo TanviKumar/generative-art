@@ -1,4 +1,4 @@
-import * as dat from 'dat.gui';
+import * as dat from "dat.gui";
 export default function sketch(p) {
   let sec_count = 0;
 
@@ -83,27 +83,27 @@ export default function sketch(p) {
     }
     p.pop();
   }
-  const BeyondBinary = function(){
-    this.Color1 = '#EFCF20';
-    this.Color2 = '#A083D5';
+  const BeyondBinary = function () {
+    this.Color1 = "#EFCF20";
+    this.Color2 = "#A083D5";
     this.Time1 = 3;
     this.Time2 = 3;
     this.frameRate = 1;
   };
   const gui = new dat.GUI();
   const beyondBinary = new BeyondBinary();
-  let uiColor1 = gui.addColor(beyondBinary, 'Color1');
-  let uiColor2 = gui.addColor(beyondBinary, 'Color2');
-  let uiTime1 = gui.add(beyondBinary,"Time1",0,20,1);
-  let uiTime2 = gui.add(beyondBinary,"Time2",0,20,1);
-  let uiFrameRate = gui.add(beyondBinary,"frameRate",1,60,1);
+  let uiColor1 = gui.addColor(beyondBinary, "Color1");
+  let uiColor2 = gui.addColor(beyondBinary, "Color2");
+  let uiTime1 = gui.add(beyondBinary, "Time1", 0, 20, 1);
+  let uiTime2 = gui.add(beyondBinary, "Time2", 0, 20, 1);
+  let uiFrameRate = gui.add(beyondBinary, "frameRate", 1, 60, 1);
   uiColor1.onChange(p.setup);
   uiColor2.onChange(p.setup);
   uiTime1.onChange(p.setup);
   uiTime2.onChange(p.setup);
   uiFrameRate.onChange(p.setup);
   gui.close();
-  window.onpopstate = function(e){
+  window.onpopstate = function (e) {
     gui.destroy();
-  }
+  };
 }

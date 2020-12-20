@@ -1,4 +1,4 @@
-import * as dat from 'dat.gui'
+import * as dat from "dat.gui";
 export default function sketch(p) {
   // Padding around the canvas.
   let padding = 15;
@@ -26,9 +26,9 @@ export default function sketch(p) {
   let shiftLimit = 1;
 
   let shades = [
-    '#D1BCE3',
+    "#D1BCE3",
     "#585481",
-    '#C49BBB',
+    "#C49BBB",
     "#B5B682",
     "#FEDC97",
     "#B5B682",
@@ -125,26 +125,26 @@ export default function sketch(p) {
     p.arc(hSize / 4, vSize / 2, radii1, radii1, 180, 300);
     p.arc(hSize / 4, -vSize / 2, radii1, radii1, 60, 180);
   }
-  class TenPrintHex{
+  class TenPrintHex {
     constructor() {
-      this.Shade1 = '#D1BCE3';
-      this.Shade2 = '#B5B682';
+      this.Shade1 = "#D1BCE3";
+      this.Shade2 = "#B5B682";
     }
   }
   const tenPrintHex = new TenPrintHex();
   const gui = new dat.GUI();
-  const uiShade1 = gui.addColor(tenPrintHex,'Shade1');
-  const uiShade2 = gui.addColor(tenPrintHex,'Shade2');
-  uiShade1.onChange(()=>{
+  const uiShade1 = gui.addColor(tenPrintHex, "Shade1");
+  const uiShade2 = gui.addColor(tenPrintHex, "Shade2");
+  uiShade1.onChange(() => {
     p.setup();
     p.draw();
   });
-  uiShade2.onChange(()=>{
+  uiShade2.onChange(() => {
     p.setup();
     p.draw();
   });
   gui.close();
-  window.onpopstate = function(e){
+  window.onpopstate = function (e) {
     gui.destroy();
-  }
+  };
 }

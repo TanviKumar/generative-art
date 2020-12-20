@@ -1,4 +1,4 @@
-import * as dat from 'dat.gui'
+import * as dat from "dat.gui";
 export default function sketch(p) {
   // Padding around the canvas.
   let padding = 45;
@@ -84,17 +84,17 @@ export default function sketch(p) {
     }
     p.pop();
   }
-  class SoftTenPrint{
+  class SoftTenPrint {
     constructor() {
       this.StrokeWeight = 4;
     }
   }
   const softTenPrint = new SoftTenPrint();
   const gui = new dat.GUI();
-  const uiStrokeWeight = gui.add(softTenPrint,"StrokeWeight",1,10,1);
+  const uiStrokeWeight = gui.add(softTenPrint, "StrokeWeight", 1, 10, 1);
   uiStrokeWeight.onChange(p.draw);
   gui.close();
-  window.onpopstate = function(e){
+  window.onpopstate = function (e) {
     gui.destroy();
-  }
+  };
 }

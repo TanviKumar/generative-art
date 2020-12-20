@@ -1,4 +1,4 @@
-import * as dat from 'dat.gui';
+import * as dat from "dat.gui";
 export default function sketch(p) {
   // Padding around the canvas.
   let padding = 15;
@@ -55,20 +55,20 @@ export default function sketch(p) {
     }
     p.pop();
   }
-  class Squiggles{
+  class Squiggles {
     constructor() {
-      this.Background = '#FEDC97';
+      this.Background = "#FEDC97";
     }
   }
   const squiggles = new Squiggles();
   const gui = new dat.GUI();
-  const uiBg = gui.addColor(squiggles,'Background');
-  uiBg.onChange(()=>{
+  const uiBg = gui.addColor(squiggles, "Background");
+  uiBg.onChange(() => {
     p.setup();
     p.draw();
   });
   gui.close();
-  window.onpopstate = function(e){
+  window.onpopstate = function (e) {
     gui.destroy();
-  }
+  };
 }

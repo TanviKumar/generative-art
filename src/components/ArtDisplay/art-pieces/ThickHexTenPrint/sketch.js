@@ -1,4 +1,4 @@
-import * as dat from 'dat.gui';
+import * as dat from "dat.gui";
 export default function sketch(p) {
   // Padding around the canvas.
   let padding = 15;
@@ -144,20 +144,20 @@ export default function sketch(p) {
     p.arc(hSize / 4, vSize / 2, radii1, radii1, 180, 300);
     p.arc(hSize / 4, -vSize / 2, radii1, radii1, 60, 180);
   }
-  class ThickHexTenPrint{
+  class ThickHexTenPrint {
     constructor() {
       this.Alpha = 150;
     }
   }
   const thickHexTenPrint = new ThickHexTenPrint();
   const gui = new dat.GUI();
-  let uiAlpha = gui.add(thickHexTenPrint,'Alpha',1,200);
-  uiAlpha.onChange(()=>{
+  let uiAlpha = gui.add(thickHexTenPrint, "Alpha", 1, 200);
+  uiAlpha.onChange(() => {
     p.setup();
     p.draw();
   });
   gui.close();
-  window.onpopstate = function(e){
+  window.onpopstate = function (e) {
     gui.destroy();
-  }
+  };
 }

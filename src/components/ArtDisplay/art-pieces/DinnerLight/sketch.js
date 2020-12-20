@@ -1,4 +1,4 @@
-import * as dat from 'dat.gui'
+import * as dat from "dat.gui";
 export default function sketch(p) {
   // Padding around the canvas.
   let padding = 15;
@@ -60,20 +60,20 @@ export default function sketch(p) {
     }
     p.pop();
   }
-  class DinnerLight{
+  class DinnerLight {
     constructor() {
       this.alpha = 90;
     }
   }
   const dinnerLight = new DinnerLight();
   const gui = new dat.GUI();
-  const uiAlpha = gui.add(dinnerLight,'alpha',0,255,1);
-  uiAlpha.onChange(()=>{
+  const uiAlpha = gui.add(dinnerLight, "alpha", 0, 255, 1);
+  uiAlpha.onChange(() => {
     p.setup();
     p.draw();
   });
   gui.close();
-  window.onpopstate = function(e){
+  window.onpopstate = function (e) {
     gui.destroy();
-  }
+  };
 }

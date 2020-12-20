@@ -1,4 +1,4 @@
-import * as dat from 'dat.gui'
+import * as dat from "dat.gui";
 export default function sketch(p) {
   // Padding around the canvas.
   let padding = 25;
@@ -22,17 +22,10 @@ export default function sketch(p) {
   let shiftLimit = 15;
 
   let shades = ["#FEDC97", "#B5B682", "#28666E", "#7C9885"];
-      shades = ["#ffe5fa", "#ffb2ff", "#e500ff", "#c402e2"];
+  shades = ["#ffe5fa", "#ffb2ff", "#e500ff", "#c402e2"];
   let shades1 = ["#e1ff00", "#ecf79b", "#f6ff7c", "#fff600"];
-      shades1 = ["#ffaabb", "#ff7799", "#ffbbcc", "#ff3344"];
-      shades = [
-    "#becbd9",
-    "#f4dada",
-    "#f6ddc7",
-    "#fee2b3",
-    "#ffa299",
-    "#ad6989",
-  ];
+  shades1 = ["#ffaabb", "#ff7799", "#ffbbcc", "#ff3344"];
+  shades = ["#becbd9", "#f4dada", "#f6ddc7", "#fee2b3", "#ffa299", "#ad6989"];
 
   p.setup = function () {
     p.createCanvas(gridSize, gridSize);
@@ -94,21 +87,20 @@ export default function sketch(p) {
   class BorderRadius {
     constructor() {
       this.SquareShade = shades[0];
-      this.SpotColor = '#fff';
+      this.SpotColor = "#fff";
       this.frameRate = 2;
     }
   }
   const borderRadius = new BorderRadius();
   const gui = new dat.GUI();
-  let uiShade = gui.addColor(borderRadius,'SquareShade');
-  let uiSpotColor = gui.addColor(borderRadius,'SpotColor');
-  let uiFrameRate = gui.add(borderRadius,'frameRate',1,60,1);
+  let uiShade = gui.addColor(borderRadius, "SquareShade");
+  let uiSpotColor = gui.addColor(borderRadius, "SpotColor");
+  let uiFrameRate = gui.add(borderRadius, "frameRate", 1, 60, 1);
   uiShade.onChange(p.setup);
   uiSpotColor.onChange(p.setup);
   uiFrameRate.onChange(p.setup);
   gui.close();
-  window.onpopstate = function(e){
+  window.onpopstate = function (e) {
     gui.destroy();
-  }
-
+  };
 }
