@@ -1,22 +1,5 @@
 import * as dat from 'dat.gui';
 export default function sketch(p) {
-  // GUI Settings
-  class TenPrint{
-    constructor() {
-      this.cellSize = 30;
-    }
-  }
-  const tenPrint = new TenPrint();
-  const gui = new dat.GUI();
-  const uiCellSize =  gui.add(tenPrint,'cellSize',20,200,1);
-  uiCellSize.onChange(()=>{
-    p.setup();
-    p.draw();
-  });
-  gui.close();
-  window.onpopstate = function(e){
-    gui.destroy();
-  }
   // Padding around the canvas.
   let padding = 15;
 
@@ -24,7 +7,7 @@ export default function sketch(p) {
   let row = 24;
 
   // Size of grid cells (cellSize x cellSize).
-  let cellSize = uiCellSize.getValue();
+  let cellSize = 30;
   let gridSize = cellSize * row + padding * 2;
 
   // Probability of drawing an inner rectangle.
@@ -36,7 +19,7 @@ export default function sketch(p) {
   // Extent the square can shift from center
   let shiftLimit = 1;
 
-  let shades = ["#FEDC97", "#B5B682", "#28666E", "#7C9885"];
+  let shades = ['#FEDC97', "#B5B682", '#28666E', "#7C9885"];
 
   p.setup = function () {
     p.createCanvas(gridSize, gridSize);
@@ -58,7 +41,7 @@ export default function sketch(p) {
   function drawCell(x, y) {
     p.push();
     p.translate(x, y);
-    p.fill(shades[0]);
+    p.fill(uiShade1.getValue());
     p.noStroke();
     p.rect(0, 0, cellSize, cellSize);
     p.stroke(0);
@@ -116,4 +99,21 @@ export default function sketch(p) {
     }
     p.pop();
   }
+    // GUI Settings
+    class TenPrint{
+      constructor() {
+        this.Shade1 = '#FEDC97';
+      }
+    }
+    const tenPrint = new TenPrint();
+    const gui = new dat.GUI();
+    const uiShade1 = gui.addColor(tenPrint,'Shade1');
+    uiShade1.onChange(()=>{
+      p.setup();
+      p.draw();
+    });
+    gui.close();
+    window.onpopstate = function(e){
+      gui.destroy();
+    }
 }

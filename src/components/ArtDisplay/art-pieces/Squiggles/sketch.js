@@ -42,7 +42,7 @@ export default function sketch(p) {
   function drawCell(x, y) {
     p.push();
     p.translate(x, y);
-    p.fill(shades[0]);
+    p.fill(uiBg.getValue());
     p.noStroke();
     p.rect(0, 0, cellSize, cellSize);
     p.stroke(0);
@@ -55,7 +55,18 @@ export default function sketch(p) {
     }
     p.pop();
   }
+  class Squiggles{
+    constructor() {
+      this.Background = '#FEDC97';
+    }
+  }
+  const squiggles = new Squiggles();
   const gui = new dat.GUI();
+  const uiBg = gui.addColor(squiggles,'Background');
+  uiBg.onChange(()=>{
+    p.setup();
+    p.draw();
+  });
   gui.close();
   window.onpopstate = function(e){
     gui.destroy();
