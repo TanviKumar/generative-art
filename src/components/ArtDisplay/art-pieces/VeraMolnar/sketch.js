@@ -1,3 +1,4 @@
+import * as dat from 'dat.gui';
 export default function sketch(p) {
   // Padding around the canvas.
   let padding = 15;
@@ -49,5 +50,10 @@ export default function sketch(p) {
       }
     }
     p.pop();
+  }
+  const gui = new dat.GUI();
+  gui.close();
+  window.onpopstate = function(e){
+    gui.destroy();
   }
 }

@@ -1,3 +1,4 @@
+import * as dat from 'dat.gui';
 export default function sketch(p) {
   // Padding around the canvas.
   let padding = 35;
@@ -38,7 +39,7 @@ export default function sketch(p) {
   };
 
   p.draw = function () {
-    p.background(shades[2]);
+    p.background(uiBg.getValue());
     for (let y = padding; y < p.height - 2 * padding; y += cellSize) {
       for (let x = padding; x < p.width - 2 * padding; x += cellSize) {
         drawCell(x + cellSize / 2, y + cellSize / 2);
@@ -49,11 +50,11 @@ export default function sketch(p) {
   function drawCell(x, y) {
     p.push();
     p.translate(x, y);
-    p.fill(shades[2]);
+    p.fill(uiBg.getValue());
     p.noStroke();
     p.rectMode(p.CENTER);
     p.rect(0, 0, cellSize, cellSize);
-    p.stroke(shades[0]);
+    p.stroke(uiStroke.getValue());
     p.rectMode(p.CORNER);
     if (p.random() > 0.5) {
       // side 1
@@ -201,5 +202,27 @@ export default function sketch(p) {
       );
     }
     p.pop();
+  }
+  class Waves{
+    constructor() {
+      this.Background = '#28666E';
+      this.Stroke = '#FEDC97';
+    }
+  }
+  const waves = new Waves();
+  const gui = new dat.GUI();
+  let uiStroke = gui.addColor(waves,'Stroke');
+  let uiBg = gui.addColor(waves,'Background');
+  uiStroke.onChange(()=>{
+    p.setup();
+    p.draw();
+  });
+  uiBg.onChange(()=>{
+    p.setup();
+    p.draw();
+  });
+  gui.close();
+  window.onpopstate = function(e){
+    gui.destroy();
   }
 }

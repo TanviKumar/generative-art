@@ -138,6 +138,7 @@ export default function sketch(p) {
     p.draw();
   });
   hSize = uiRadii.getValue();
+  gui.close();
   window.onpopstate = function(e){
     gui.destroy();
   }
