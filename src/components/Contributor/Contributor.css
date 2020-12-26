@@ -1,3 +1,22 @@
 h1 {
-  margin-bottom: 10%;
+  margin-bottom: 5%;
+}
+.rows-contributor:nth-child(even) {
+  background-color: #221b3a;
+  border-radius: 200px 0 200px 0px;
+}
+.rows-contributor:nth-child(odd) {
+  background-color: #6c5ba7;
+  border-radius: 0px 200px 0 200px;
+}
+.MuiPaper-root {
+  color: rgba(0, 0, 0, 0.87);
+  transition: none;
+  background-color: #fff;
+  width: 150px;
+  height: 150px;
+}
+.MuiPaper-root img {
+  width: 150px;
+  height: 150px;
 }

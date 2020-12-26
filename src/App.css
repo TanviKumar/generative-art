@@ -7,3 +7,11 @@
   margin: 0;
   padding: 0;
 }
+:root {
+  --dark-bluecolor: #221b3a;
+  --bg-themecolor: #e3e1f0;
+}
+h1 {
+  text-transform: uppercase;
+  font-size: 40px;
+}
