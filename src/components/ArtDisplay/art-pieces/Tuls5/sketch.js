@@ -4,11 +4,11 @@ export default function sketch(p) {
   let padding = 35;
 
   // Number of squares per row/column
-  let row = 8;
+  let row;
 
   // Size of grid cells (cellSize x cellSize).
   let cellSize = 80;
-  let gridSize = cellSize * row + padding * 2;
+  let gridSize;
 
   // Probability of drawing an inner rectangle.
   let chance = 0.6;
@@ -30,6 +30,8 @@ export default function sketch(p) {
   ];
 
   p.setup = function () {
+    row = uiRow.getValue();
+    gridSize = cellSize * row + padding * 2;
     p.createCanvas(gridSize, gridSize);
     p.rectMode(p.CORNER);
     p.angleMode(p.DEGREES);
@@ -149,15 +151,21 @@ export default function sketch(p) {
       this.Alpha2 = 100;
       this.Background = "#FFF";
       this.StrokeWeight = 2;
+      this.Row = 8;
     }
   }
   const tuls5 = new Tuls5();
   const gui = new dat.GUI();
-  let uiColor = gui.addColor(tuls5, "Color");
-  let uiBg = gui.addColor(tuls5, "Background");
-  let uiAlpha1 = gui.add(tuls5, "Alpha1", 1, 200, 1);
-  let uiAlpha2 = gui.add(tuls5, "Alpha2", 1, 200, 1);
-  let uiStrokeWeight = gui.add(tuls5, "StrokeWeight", 1, 10, 1);
+  const uiColor = gui.addColor(tuls5, "Color");
+  const uiBg = gui.addColor(tuls5, "Background");
+  const uiAlpha1 = gui.add(tuls5, "Alpha1", 1, 200, 1);
+  const uiAlpha2 = gui.add(tuls5, "Alpha2", 1, 200, 1);
+  const uiStrokeWeight = gui.add(tuls5, "StrokeWeight", 1, 10, 1);
+  const uiRow = gui.add(tuls5, "Row", 5, 15, 1);
+  uiRow.onChange(() => {
+    p.setup();
+    p.draw();
+  });
   uiColor.onChange(() => {
     p.setup();
     p.draw();

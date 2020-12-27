@@ -48,7 +48,7 @@ export default function sketch(p) {
 
   p.draw = function () {
     p.background(uiShade1.getValue());
-    p.stroke(0);
+    p.stroke(uiStroke.getValue());
     let i = 1;
     for (
       let y = padding + vSize / 2;
@@ -129,17 +129,23 @@ export default function sketch(p) {
     constructor() {
       this.Shade1 = "#D1BCE3";
       this.Shade2 = "#B5B682";
+      this.Stroke = "#000";
     }
   }
   const tenPrintHex = new TenPrintHex();
   const gui = new dat.GUI();
   const uiShade1 = gui.addColor(tenPrintHex, "Shade1");
   const uiShade2 = gui.addColor(tenPrintHex, "Shade2");
+  const uiStroke = gui.addColor(tenPrintHex, "Stroke");
   uiShade1.onChange(() => {
     p.setup();
     p.draw();
   });
   uiShade2.onChange(() => {
+    p.setup();
+    p.draw();
+  });
+  uiStroke.onChange(() => {
     p.setup();
     p.draw();
   });

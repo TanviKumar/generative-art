@@ -4,11 +4,11 @@ export default function sketch(p) {
   let padding = 35;
 
   // Number of squares per row/column
-  let row = 8;
+  let row;
 
   // Size of grid cells (cellSize x cellSize).
   let cellSize = 80;
-  let gridSize = cellSize * row + padding * 2;
+  let gridSize;
 
   // Probability of drawing an inner rectangle.
   let chance = 0.6;
@@ -30,6 +30,8 @@ export default function sketch(p) {
   ];
 
   p.setup = function () {
+    row = uiRow.getValue();
+    gridSize = cellSize * row + padding * 2;
     p.createCanvas(gridSize, gridSize);
     p.rectMode(p.CORNER);
     p.angleMode(p.DEGREES);
@@ -96,17 +98,23 @@ export default function sketch(p) {
     constructor() {
       this.Shade = "#B5B682";
       this.Background = "#28666E";
+      this.Row = 8;
     }
   }
   const tuls1 = new Tuls1();
   const gui = new dat.GUI();
-  let uiShade = gui.addColor(tuls1, "Shade");
-  let uiBg = gui.addColor(tuls1, "Background");
+  const uiShade = gui.addColor(tuls1, "Shade");
+  const uiBg = gui.addColor(tuls1, "Background");
+  const uiRow = gui.add(tuls1, "Row", 5, 15, 1);
   uiShade.onChange(() => {
     p.setup();
     p.draw();
   });
   uiBg.onChange(() => {
+    p.setup();
+    p.draw();
+  });
+  uiRow.onChange(() => {
     p.setup();
     p.draw();
   });

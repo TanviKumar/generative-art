@@ -2,13 +2,9 @@ import * as dat from "dat.gui";
 export default function sketch(p) {
   // Padding around the canvas.
   let padding = 25;
-
-  // Number of squares per row/column
-  let row = 10;
-
   // Size of grid cells (cellSize x cellSize).
   let cellSize = 50;
-  let gridSize = cellSize * row + padding * (row + 3);
+  let gridSize;
 
   // Probabiity of drawing an inner rectangle.
   let chance = 0.6;
@@ -28,6 +24,8 @@ export default function sketch(p) {
   shades = ["#becbd9", "#f4dada", "#f6ddc7", "#fee2b3", "#ffa299", "#ad6989"];
 
   p.setup = function () {
+    // uiRow - Number of squares per row/column
+    gridSize = cellSize * uiRow.getValue() + padding * (uiRow.getValue() + 3);
     p.createCanvas(gridSize, gridSize);
     p.rectMode(p.CENTER);
     p.angleMode(p.DEGREES);
@@ -86,9 +84,10 @@ export default function sketch(p) {
   }
   class BorderRadius {
     constructor() {
-      this.SquareShade = shades[0];
+      this.SquareShade = "#becbd9";
       this.SpotColor = "#fff";
       this.frameRate = 2;
+      this.row = 10;
     }
   }
   const borderRadius = new BorderRadius();
@@ -96,9 +95,19 @@ export default function sketch(p) {
   let uiShade = gui.addColor(borderRadius, "SquareShade");
   let uiSpotColor = gui.addColor(borderRadius, "SpotColor");
   let uiFrameRate = gui.add(borderRadius, "frameRate", 1, 60, 1);
-  uiShade.onChange(p.setup);
-  uiSpotColor.onChange(p.setup);
-  uiFrameRate.onChange(p.setup);
+  let uiRow = gui.add(borderRadius, "row", 5, 18, 1);
+  uiShade.onChange(() => {
+    p.setup();
+  });
+  uiSpotColor.onChange(() => {
+    p.setup();
+  });
+  uiFrameRate.onChange(() => {
+    p.setup();
+  });
+  uiRow.onChange(() => {
+    p.setup();
+  });
   gui.close();
   window.onpopstate = function (e) {
     gui.destroy();

@@ -49,7 +49,7 @@ export default function sketch(p) {
   };
 
   p.draw = function () {
-    p.background("black");
+    p.background(uiBg.getValue());
     p.stroke(0);
     let i = 1;
     for (
@@ -71,7 +71,7 @@ export default function sketch(p) {
   };
 
   function drawBorder() {
-    p.fill("black");
+    p.fill(uiBg.getValue());
     let border = 50;
     p.noStroke();
     p.rect(border / 2, gridSize / 2, border, gridSize);
@@ -147,12 +147,18 @@ export default function sketch(p) {
   class ThickHexTenPrint {
     constructor() {
       this.Alpha = 150;
+      this.Background = "#000";
     }
   }
   const thickHexTenPrint = new ThickHexTenPrint();
   const gui = new dat.GUI();
-  let uiAlpha = gui.add(thickHexTenPrint, "Alpha", 1, 200);
+  const uiAlpha = gui.add(thickHexTenPrint, "Alpha", 1, 200);
+  const uiBg = gui.addColor(thickHexTenPrint, "Background");
   uiAlpha.onChange(() => {
+    p.setup();
+    p.draw();
+  });
+  uiBg.onChange(() => {
     p.setup();
     p.draw();
   });

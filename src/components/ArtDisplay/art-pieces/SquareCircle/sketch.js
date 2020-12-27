@@ -20,7 +20,11 @@ export default function sketch(p) {
     for (let j = 150; j < 400; j += 25) {
       rad = j;
       for (let i = 0; i < 360; i += steps) {
-        c = p.color(p.random(200) + 20, p.random(20) + 20, p.random(200) + 20);
+        c = p.color(
+          p.random(200) + 20,
+          p.random(uiShade.getValue()) + 20,
+          p.random(200) + 20
+        );
         c.setAlpha(75);
         p.fill(c);
         p.rect(
@@ -42,17 +46,23 @@ export default function sketch(p) {
     constructor() {
       this.Background = "#000";
       this.Alpha = 60;
+      this.Shade = 20;
     }
   }
   const squareCircle = new SquareCircle();
   const gui = new dat.GUI();
   const uiBg = gui.addColor(squareCircle, "Background");
   const uiAlpha = gui.add(squareCircle, "Alpha", 1, 200, 1);
+  const uiShade = gui.add(squareCircle, "Shade", 1, 230, 1);
   uiBg.onChange(() => {
     p.setup();
     p.draw();
   });
   uiAlpha.onChange(() => {
+    p.setup();
+    p.draw();
+  });
+  uiShade.onChange(() => {
     p.setup();
     p.draw();
   });

@@ -35,15 +35,16 @@ export default function sketch(p) {
     p.translate(x, y);
     for (let size = cellSize - gap; size >= gap; size -= gap) {
       if (p.random() < chance) {
-        let c1Val = p.random(250);
-        let c2Val = p.random(250);
+        let c1Val = p.color(p.random(250), p.random(250), p.random(250));
+        let c2Val = p.color(p.random(250), p.random(250), p.random(250));
         let c3Val = p.random(250);
+        let lerp = p.lerpColor(c1Val, c2Val, uiFactor.getValue() / 100);
         let rotateBy = p.random(5);
         if (p.random() > 0.5) {
           rotateBy = -rotateBy;
         }
         p.rotate(rotateBy);
-        p.fill(c1Val, c1Val, c2Val);
+        p.fill(lerp);
         if (p.random() > 0.5) p.rect(0, 0, size - gap, size - gap);
         else p.circle(0, 0, size);
         p.rotate(-rotateBy);
@@ -51,7 +52,18 @@ export default function sketch(p) {
     }
     p.pop();
   }
+  class VeraMolnar {
+    constructor() {
+      this.Factor = 33;
+    }
+  }
+  const veraMolnar = new VeraMolnar();
   const gui = new dat.GUI();
+  const uiFactor = gui.add(veraMolnar, "Factor", 1, 100, 1);
+  uiFactor.onChange(() => {
+    p.setup();
+    p.draw();
+  });
   gui.close();
   window.onpopstate = function (e) {
     gui.destroy();

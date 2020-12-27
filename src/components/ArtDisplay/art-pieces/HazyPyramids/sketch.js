@@ -3,12 +3,9 @@ export default function sketch(p) {
   // Padding around the canvas.
   let padding = 15;
 
-  // Number of squares per row/column
-  let row = 14;
-
   // Size of grid cells (cellSize x cellSize).
   let cellSize = 50;
-  let gridSize = cellSize * row + padding * 2;
+  let gridSize;
 
   // Probabiity of drawing an inner rectangle.
   let chance = 0.6;
@@ -25,16 +22,18 @@ export default function sketch(p) {
   let centers = new Array(14);
 
   p.setup = function () {
+    // uiRow - Number of squares per row/column
+    gridSize = cellSize * uiRow.getValue() + padding * 2;
     p.createCanvas(gridSize, gridSize);
     p.rectMode(p.CENTER);
     p.angleMode(p.DEGREES);
     //noLoop()
     p.frameRate(10);
-    for (let i = 0; i < row; i++) {
+    for (let i = 0; i < uiRow.getValue(); i++) {
       centers[i] = new Array(14);
     }
-    for (let i = 0; i < row; ++i) {
-      for (let j = 0; j < row; ++j) {
+    for (let i = 0; i < uiRow.getValue(); ++i) {
+      for (let j = 0; j < uiRow.getValue(); ++j) {
         centers[i][j] = {};
         centers[i][j].x = 0;
         centers[i][j].y = 0;
@@ -62,8 +61,8 @@ export default function sketch(p) {
   function drawCell(x, y, a, b) {
     p.push();
     p.translate(x, y);
-    let xShift = p.ceil(p.random(shiftLimit));
-    let yShift = p.ceil(p.random(shiftLimit));
+    let xShift = p.ceil(p.random(uiShiftLimit.getValue()));
+    let yShift = p.ceil(p.random(uiShiftLimit.getValue()));
     if (p.random() > 0.5) {
       xShift = -xShift;
     }
@@ -84,7 +83,7 @@ export default function sketch(p) {
     xShift = centers[a][b].x;
     yShift = centers[a][b].y;
     p.rect(0, 0, cellSize, cellSize);
-    p.fill(shades[1]);
+    p.fill(uiShade.getValue());
     p.triangle(
       xShift,
       yShift,
@@ -93,7 +92,7 @@ export default function sketch(p) {
       cellSize / 2,
       -cellSize / 2
     );
-    p.fill(shades[1]);
+    p.fill(uiShade.getValue());
     p.triangle(
       xShift,
       yShift,
@@ -131,15 +130,27 @@ export default function sketch(p) {
     constructor() {
       this.shiftLimit = 1;
       this.frameRate = 10;
+      this.row = 14;
+      this.Shade = "#B5B682";
     }
   }
   const hazyPyramid = new HazyPyramid();
   const gui = new dat.GUI();
   const uiShiftLimit = gui.add(hazyPyramid, "shiftLimit", 1, 10, 1);
   const uiFrameRate = gui.add(hazyPyramid, "frameRate", 1, 60, 1);
+  const uiRow = gui.add(hazyPyramid, "row", 5, 20, 1);
+  const uiShade = gui.addColor(hazyPyramid, "Shade");
   uiShiftLimit.onChange(() => {
     p.setup();
-    shiftLimit = uiShiftLimit.getValue();
+    p.draw();
+  });
+  uiRow.onChange(() => {
+    p.setup();
+    p.draw();
+  });
+  uiShade.onChange(() => {
+    p.setup();
+    p.draw();
   });
   uiFrameRate.onChange(p.setup);
   gui.close();

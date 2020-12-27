@@ -9,7 +9,7 @@ export default function sketch(p) {
 
   // Size of grid cells (cellSize x cellSize).
   let cellSize = 200;
-  let gridSize = cellSize * row + padding * 2 + gap * (row - 1);
+  let gridSize;
 
   // Probability of drawing an inner rectangle.
   let chance = 0.6;
@@ -23,6 +23,10 @@ export default function sketch(p) {
   let shades = ["#FEDC97", "#98777B", "#FFC1CC", "#65000B"];
 
   p.setup = () => {
+    gridSize =
+      cellSize * uiRow.getValue() +
+      padding * 2 +
+      uiGap.getValue() * (uiRow.getValue() - 1);
     p.createCanvas(gridSize, gridSize);
     p.rectMode(p.CORNER);
     p.angleMode(p.DEGREES);
@@ -63,12 +67,24 @@ export default function sketch(p) {
   class DinnerLight {
     constructor() {
       this.alpha = 90;
+      this.row = 2;
+      this.gap = 20;
     }
   }
   const dinnerLight = new DinnerLight();
   const gui = new dat.GUI();
   const uiAlpha = gui.add(dinnerLight, "alpha", 0, 255, 1);
+  const uiRow = gui.add(dinnerLight, "row", 1, 6, 1);
+  const uiGap = gui.add(dinnerLight, "gap", 10, 30, 1);
   uiAlpha.onChange(() => {
+    p.setup();
+    p.draw();
+  });
+  uiRow.onChange(() => {
+    p.setup();
+    p.draw();
+  });
+  uiGap.onChange(() => {
     p.setup();
     p.draw();
   });

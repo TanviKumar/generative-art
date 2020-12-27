@@ -3,12 +3,9 @@ export default function sketch(p) {
   // Padding around the canvas.
   let padding = 50;
 
-  // Number of squares per row/column
-  let row = 4;
-
   // Size of grid cells (cellSize x cellSize).
   let cellSize = 100;
-  let gridSize = cellSize * row + padding * (row + 1);
+  let gridSize;
 
   // Probabiity of drawing an inner rectangle.
   let chance = 0.6;
@@ -25,6 +22,8 @@ export default function sketch(p) {
   shades = ["#ffaabb", "#ff7799", "#ffbbcc", "#ff3344"];
 
   p.setup = function () {
+    // uiRow -  Number of squares per row/column
+    gridSize = cellSize * uiRow.getValue() + padding * (uiRow.getValue() + 1);
     p.createCanvas(gridSize, gridSize);
     p.rectMode(p.CENTER);
     p.angleMode(p.DEGREES);
@@ -44,8 +43,8 @@ export default function sketch(p) {
   function drawCell(x, y, a, b) {
     p.push();
     p.translate(x, y);
-    let xShift = p.ceil(p.random(shiftLimit));
-    let yShift = p.ceil(p.random(shiftLimit));
+    let xShift = p.ceil(p.random(uiShiftLimit.getValue()));
+    let yShift = p.ceil(p.random(uiShiftLimit.getValue()));
     if (p.random() > 0.5) {
       xShift = -xShift;
     }
@@ -72,7 +71,7 @@ export default function sketch(p) {
       -cellSize / 2,
       -cellSize / 2
     );
-    p.fill(shades[2]);
+    p.fill(uiShade.getValue());
     p.triangle(
       xShift,
       yShift,
@@ -101,18 +100,29 @@ export default function sketch(p) {
     constructor() {
       this.shiftLimit = 15;
       this.frameRate = 2;
+      this.Shade = "#ffbbcc";
+      this.row = 4;
     }
   }
   const pyramidGrid = new PyramidGrid();
   const gui = new dat.GUI();
   const uiShiftLimit = gui.add(pyramidGrid, "shiftLimit", 1, 50, 1);
   const uiFrameRate = gui.add(pyramidGrid, "frameRate", 1, 60, 1);
+  const uiShade = gui.addColor(pyramidGrid, "Shade");
+  const uiRow = gui.add(pyramidGrid, "row", 1, 6, 1);
   uiShiftLimit.onChange(() => {
     p.setup();
-    shiftLimit = uiShiftLimit.getValue();
     p.draw();
   });
   uiFrameRate.onChange(() => {
+    p.setup();
+    p.draw();
+  });
+  uiShade.onChange(() => {
+    p.setup();
+    p.draw();
+  });
+  uiRow.onChange(() => {
     p.setup();
     p.draw();
   });

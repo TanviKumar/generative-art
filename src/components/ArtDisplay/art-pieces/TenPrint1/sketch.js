@@ -4,11 +4,11 @@ export default function sketch(p) {
   let padding = 15;
 
   // Number of squares per row/column
-  let row = 24;
+  let row;
 
   // Size of grid cells (cellSize x cellSize).
   let cellSize = 30;
-  let gridSize = cellSize * row + padding * 2;
+  let gridSize;
 
   // Probability of drawing an inner rectangle.
   let chance = 0.6;
@@ -22,6 +22,8 @@ export default function sketch(p) {
   let shades = ["#FEDC97", "#B5B682", "#28666E", "#7C9885"];
 
   p.setup = function () {
+    row = uiRow.getValue();
+    gridSize = cellSize * row + padding * 2;
     p.createCanvas(gridSize, gridSize);
     p.rectMode(p.CENTER);
     p.angleMode(p.DEGREES);
@@ -41,10 +43,10 @@ export default function sketch(p) {
   function drawCell(x, y) {
     p.push();
     p.translate(x, y);
-    p.fill(uiShade1.getValue());
+    p.fill(uiShade.getValue());
     p.noStroke();
     p.rect(0, 0, cellSize, cellSize);
-    p.stroke(0);
+    p.stroke(uiStroke.getValue());
     let pp;
     if (p.random() > 0.5) {
       p.line(-cellSize / 2, -cellSize / 2, cellSize / 2, cellSize / 2);
@@ -102,13 +104,25 @@ export default function sketch(p) {
   // GUI Settings
   class TenPrint {
     constructor() {
-      this.Shade1 = "#FEDC97";
+      this.Shade = "#FEDC97";
+      this.Row = 24;
+      this.Stroke = "#000";
     }
   }
   const tenPrint = new TenPrint();
   const gui = new dat.GUI();
-  const uiShade1 = gui.addColor(tenPrint, "Shade1");
-  uiShade1.onChange(() => {
+  const uiShade = gui.addColor(tenPrint, "Shade");
+  const uiStroke = gui.addColor(tenPrint, "Stroke");
+  const uiRow = gui.add(tenPrint, "Row", 10, 35, 1);
+  uiShade.onChange(() => {
+    p.setup();
+    p.draw();
+  });
+  uiRow.onChange(() => {
+    p.setup();
+    p.draw();
+  });
+  uiStroke.onChange(() => {
     p.setup();
     p.draw();
   });

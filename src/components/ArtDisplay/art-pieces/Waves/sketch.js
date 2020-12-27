@@ -4,11 +4,11 @@ export default function sketch(p) {
   let padding = 35;
 
   // Number of squares per row/column
-  let row = 8;
+  let row;
 
   // Size of grid cells (cellSize x cellSize).
   let cellSize = 80;
-  let gridSize = cellSize * row + padding * 2;
+  let gridSize;
 
   // Probability of drawing an inner rectangle.
   let chance = 0.6;
@@ -30,6 +30,8 @@ export default function sketch(p) {
   ];
 
   p.setup = function () {
+    row = uiRow.getValue();
+    gridSize = cellSize * row + padding * 2;
     p.createCanvas(gridSize, gridSize);
     p.rectMode(p.CORNER);
     p.angleMode(p.DEGREES);
@@ -207,12 +209,18 @@ export default function sketch(p) {
     constructor() {
       this.Background = "#28666E";
       this.Stroke = "#FEDC97";
+      this.Row = 8;
     }
   }
   const waves = new Waves();
   const gui = new dat.GUI();
-  let uiStroke = gui.addColor(waves, "Stroke");
-  let uiBg = gui.addColor(waves, "Background");
+  const uiStroke = gui.addColor(waves, "Stroke");
+  const uiBg = gui.addColor(waves, "Background");
+  const uiRow = gui.add(waves, "Row", 1, 12, 1);
+  uiRow.onChange(() => {
+    p.setup();
+    p.draw();
+  });
   uiStroke.onChange(() => {
     p.setup();
     p.draw();
