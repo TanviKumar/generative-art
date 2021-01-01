@@ -16,9 +16,5 @@ export const Sidebar =[
         path:'/contributor',
         cName:'nav-text'
     },
-    {
-        title:'Contact',
-        path:'/contact',
-        cName:'nav-text'
-    }
+    
 ]

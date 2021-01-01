@@ -17,7 +17,10 @@ function App() {
     <Router>
         <Navbar/>
         <div className="App">
-
+        <div className="leaf">
+        <div className="sq1"></div>
+        <div className="sq2"></div>
+        </div>
         <Switch>
 
           <Route path="/art" component={ArtDisplay}/>
