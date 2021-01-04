@@ -19,7 +19,7 @@ export default function Contributor() {
                 <Paper style={{ margin: "auto" }} className="people">
                   {/* Retrieving data from People.js*/}
                   <img src={contributor.pic} alt="" className="pic"/>
-                  <a href={contributor.github} className="contributor">{contributor.name}</a>
+                  <a href={contributor.github} className="contributor-name">{contributor.name}</a>
                 </Paper>
               </Grid>
                   );
