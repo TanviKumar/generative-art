@@ -1,23 +1,32 @@
 h1 {
   margin-bottom: 5%;
 }
-.rows-contributor {
-  margin: 10px !important;
-  border-radius: 120px 0 120px 0px;
-}
-.rows-contributor:nth-child(even) {
-  background-color: #221b3a;
-}
-.rows-contributor:nth-child(odd) {
-  background-color: #6c5ba7;
-}
 .MuiPaper-root {
   transition: none;
   background-color: #fff;
   width: 150px;
   height: 150px;
 }
-.MuiPaper-root img {
+.pic {
   width: 150px;
   height: 150px;
+  border: 2px solid white;
+}
+.contributor {
+  color: #fff !important;
+  list-style: none;
+  text-decoration: none;
+}
+.MuiGrid-item:nth-child(odd) {
+  background-color: #221b3a;
+  border-radius: 0 120px 0 120px;
+  justify-content: center;
+  margin: 10px !important;
+}
+
+.MuiGrid-item:nth-child(even) {
+  background-color: #665aae;
+  border-radius:  120px 0 120px 0;
+  justify-content: center;
+  margin: 10px !important;
 }

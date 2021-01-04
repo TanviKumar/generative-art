@@ -22,7 +22,7 @@ export default function DashBoard() {
           {data.map((content) => {
             return (
               <Grid item xl={4} l={4} xs={12} sm>
-                <Container style={{ margin: "10px 0" }}>
+                <Container style={{ margin: "40px 0" }}>
                   <Card
                     name={content.name}
                     desc={content.desc}
