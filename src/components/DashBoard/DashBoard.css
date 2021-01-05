@@ -1,0 +1,32 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
+* {
+  font-family: "Montserrat", sans-serif;
+}
+
+.dashboard.title {
+  font-size: 30px;
+  margin: 10px auto;
+  text-align: center;
+  letter-spacing: 0.1em;
+}
+/* Style for Pagination.js*/
+.page-item.active .page-link {
+  font-weight: bold;
+  outline: none;
+}
+.page-item .page-link {
+  text-decoration: none;
+  color: gray;
+}
+.page-item {
+  list-style: none;
+  background-color: white;
+  display: inline;
+  padding: 5px;
+  margin: 2px;
+  width: 10px;
+  height: 10px;
+}
+.pagebuttons {
+  margin-top: 5%;
+}

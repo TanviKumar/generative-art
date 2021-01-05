@@ -1,0 +1,210 @@
+[
+  {
+    "name": "Beyond Binary",
+    "desc": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga, amet?",
+    "linkUrl": "/art/beyond_binary",
+    "codeUrl": "https://github.com/rt1301/generative-art/blob/redux_implementation/assets/beyond_binary/sketch.js",
+    "image": "./static/images/beyond_binary.png",
+    "author": "Tanvi Kumar"
+  },
+  {
+    "name": "Border Radius",
+    "desc": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga, amet?",
+    "linkUrl": "/art/border_radius",
+    "codeUrl": "https://github.com/rt1301/generative-art/blob/redux_implementation/assets/border_radius/sketch.js",
+    "image": "./static/images/border_radius.png",
+    "author": "Tanvi Kumar"
+  },
+  {
+    "name": "Card",
+    "desc": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga, amet?",
+    "linkUrl": "/art/card",
+    "codeUrl": "https://github.com/rt1301/generative-art/blob/redux_implementation/assets/card/sketch.js",
+    "image": "./static/images/card.png",
+    "author": "Tanvi Kumar"
+  },
+  {
+    "name": "Cross",
+    "desc": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga, amet?",
+    "linkUrl": "/art/cross",
+    "codeUrl": "https://github.com/rt1301/generative-art/blob/redux_implementation/assets/cross/sketch.js",
+    "image": "./static/images/cross.png",
+    "author": "Tanvi Kumar"
+  },
+  {
+    "name": "Cross2",
+    "desc": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga, amet?",
+    "linkUrl": "/art/cross2",
+    "codeUrl": "https://github.com/rt1301/generative-art/blob/redux_implementation/assets/cross2/sketch.js",
+    "image": "./static/images/cross2.png",
+    "author": "Tanvi Kumar"
+  },
+  {
+    "name": "Dinner Light",
+    "desc": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga, amet?",
+    "linkUrl": "/art/dinner_light",
+    "codeUrl": "https://github.com/rt1301/generative-art/blob/redux_implementation/assets/dinner_light/sketch.js",
+    "image": "./static/images/dinner_light.png",
+    "author": "Tanvi Kumar"
+  },
+  {
+    "name": "Fade",
+    "desc": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga, amet?",
+    "linkUrl": "/art/fade",
+    "codeUrl": "https://github.com/rt1301/generative-art/blob/redux_implementation/assets/fade/sketch.js",
+    "image": "./static/images/fade.png",
+    "author": "Tanvi Kumar"
+  },
+  {
+    "name": "Flower Tree",
+    "desc": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga, amet?",
+    "linkUrl": "/art/flower_tree",
+    "codeUrl": "https://github.com/rt1301/generative-art/blob/redux_implementation/assets/flower_tree/sketch.js",
+    "image": "./static/images/flower_tree.png",
+    "author": "Tanvi Kumar"
+  },
+  {
+    "name": "Hazy Pyramids",
+    "desc": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga, amet?",
+    "linkUrl": "/art/hazy_pyramids",
+    "codeUrl": "https://github.com/rt1301/generative-art/blob/redux_implementation/assets/hazy_pyramids/sketch.js",
+    "image": "./static/images/hazy_pyramid.png",
+    "author": "Tanvi Kumar"
+  },
+  {
+    "name": "Pentaplex",
+    "desc": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga, amet?",
+    "linkUrl": "/art/pentaplex",
+    "codeUrl": "https://github.com/rt1301/generative-art/blob/redux_implementation/assets/pentaplex/sketch.js",
+    "image": "./static/images/pentaplex.png",
+    "author": "Tanvi Kumar"
+  },
+  {
+    "name": "Pyramid Grid",
+    "desc": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga, amet?",
+    "linkUrl": "/art/pyramid_grid",
+    "codeUrl": "https://github.com/rt1301/generative-art/blob/redux_implementation/assets/pyramid_grid/sketch.js",
+    "image": "./static/images/pyramid_grid.png",
+    "author": "Tanvi Kumar"
+  },
+  {
+    "name": "Random Walker",
+    "desc": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga, amet?",
+    "linkUrl": "/art/random_walker",
+    "codeUrl": "https://github.com/rt1301/generative-art/blob/redux_implementation/assets/random_walker/sketch.js",
+    "image": "./static/images/random_walker.png",
+    "author": "Tanvi Kumar"
+  },
+  {
+    "name": "Sakura",
+    "desc": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga, amet?",
+    "linkUrl": "/art/sakura",
+    "codeUrl": "https://github.com/rt1301/generative-art/blob/redux_implementation/assets/sakura/sketch.js",
+    "image": "./static/images/sakura.png",
+    "author": "Tanvi Kumar"
+  },
+  {
+    "name": "Soft Ten Print",
+    "desc": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga, amet?",
+    "linkUrl": "/art/soft_ten_print",
+    "codeUrl": "https://github.com/rt1301/generative-art/blob/redux_implementation/assets/soft_ten_print/sketch.js",
+    "image": "./static/images/soft_ten_print.png",
+    "author": "Tanvi Kumar"
+  },
+  {
+    "name": "Square Circle",
+    "desc": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga, amet?",
+    "linkUrl": "/art/square_circle",
+    "codeUrl": "https://github.com/rt1301/generative-art/blob/redux_implementation/assets/square_circle/sketch.js",
+    "image": "./static/images/square_circle.png",
+    "author": "Tanvi Kumar"
+  },
+  {
+    "name": "Squiggles",
+    "desc": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga, amet?",
+    "linkUrl": "/art/squiggles",
+    "codeUrl": "https://github.com/rt1301/generative-art/blob/redux_implementation/assets/squiggles/sketch.js",
+    "image": "./static/images/squiggles.png",
+    "author": "Tanvi Kumar"
+  },
+  {
+    "name": "Ten Print 1",
+    "desc": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga, amet?",
+    "linkUrl": "/art/ten_print_1",
+    "codeUrl": "https://github.com/rt1301/generative-art/blob/redux_implementation/assets/ten_print_1/sketch.js",
+    "image": "./static/images/ten_print_1.png",
+    "author": "Tanvi Kumar"
+  },
+  {
+    "name": "Ten Print Hex",
+    "desc": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga, amet?",
+    "linkUrl": "/art/ten_print_hex",
+    "codeUrl": "https://github.com/rt1301/generative-art/blob/redux_implementation/assets/ten_print_hex/sketch.js",
+    "image": "./static/images/ten_print_hex.png",
+    "author": "Tanvi Kumar"
+  },
+  {
+    "name": "Thick Hex Ten Print",
+    "desc": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga, amet?",
+    "linkUrl": "/art/thick_hex_ten_print",
+    "codeUrl": "https://github.com/rt1301/generative-art/blob/redux_implementation/assets/thick_hex_ten_print/sketch.js",
+    "image": "./static/images/thick_hex_ten_print.png",
+    "author": "Tanvi Kumar"
+  },
+  {
+    "name": "Tuls 1",
+    "desc": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga, amet?",
+    "linkUrl": "/art/tuls1",
+    "codeUrl": "https://github.com/rt1301/generative-art/blob/redux_implementation/assets/tuls1/sketch.js",
+    "image": "./static/images/tuls1.png",
+    "author": "Tanvi Kumar"
+  },
+  {
+    "name": "Tuls 2",
+    "desc": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga, amet?",
+    "linkUrl": "/art/tuls2",
+    "codeUrl": "https://github.com/rt1301/generative-art/blob/redux_implementation/assets/tuls2/sketch.js",
+    "image": "./static/images/tuls2.png",
+    "author": "Tanvi Kumar"
+  },
+  {
+    "name": "Tuls 3",
+    "desc": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga, amet?",
+    "linkUrl": "/art/tuls3",
+    "codeUrl": "https://github.com/rt1301/generative-art/blob/redux_implementation/assets/tuls3/sketch.js",
+    "image": "./static/images/tuls3.png",
+    "author": "Tanvi Kumar"
+  },
+  {
+    "name": "Tuls 4",
+    "desc": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga, amet?",
+    "linkUrl": "/art/tuls4",
+    "codeUrl": "https://github.com/rt1301/generative-art/blob/redux_implementation/assets/tuls4/sketch.js",
+    "image": "./static/images/tuls4.png",
+    "author": "Tanvi Kumar"
+  },
+  {
+    "name": "Tuls 5",
+    "desc": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga, amet?",
+    "linkUrl": "/art/tuls5",
+    "codeUrl": "https://github.com/rt1301/generative-art/blob/redux_implementation/assets/tuls5/sketch.js",
+    "image": "./static/images/tuls5.png",
+    "author": "Tanvi Kumar"
+  },
+  {
+    "name": "Vera Molnar",
+    "desc": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga, amet?",
+    "linkUrl": "/art/vera_molnar",
+    "codeUrl": "https://github.com/rt1301/generative-art/blob/redux_implementation/assets/vera_molnar/sketch.js",
+    "image": "./static/images/vera_molnar.png",
+    "author": "Tanvi Kumar"
+  },
+  {
+    "name": "Waves",
+    "desc": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga, amet?",
+    "linkUrl": "/art/waves",
+    "codeUrl": "https://github.com/rt1301/generative-art/blob/redux_implementation/assets/waves/sketch.js",
+    "image": "./static/images/waves.png",
+    "author": "Tanvi Kumar"
+  }
+]
