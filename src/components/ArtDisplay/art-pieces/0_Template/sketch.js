@@ -5,7 +5,7 @@ export default function sketch(p){
 /*================================================================ */
     // Padding around the canvas.
     let padding = 15;
-
+    let gap = 20;
     // Size of grid cells (cellSize x cellSize).
     let cellSize = 50;
     let gridSize;

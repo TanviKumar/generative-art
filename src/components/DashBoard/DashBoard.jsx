@@ -13,6 +13,17 @@ export default function DashBoard() {
       })
       .catch((err) => {});
   }, []);
+  const index = {
+    0: "P5.js",
+    1: "Visual Art",
+    2: "Grid Based",
+    3: "Animation",
+    4: "3D",
+    5: "Architecture",
+    6: "Procedural Generation",
+    7: "Noise",
+    8: "L-Systems"
+  }
   return (
     <div className="dashboard">
       <h1 className="title">Generative Art for All</h1>
