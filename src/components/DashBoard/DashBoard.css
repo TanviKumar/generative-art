@@ -9,3 +9,24 @@
   text-align: center;
   letter-spacing: 0.1em;
 }
+/* Style for Pagination.js*/
+.page-item.active .page-link {
+  font-weight: bold;
+  outline: none;
+}
+.page-item .page-link {
+  text-decoration: none;
+  color: gray;
+}
+.page-item {
+  list-style: none;
+  background-color: white;
+  display: inline;
+  padding: 5px;
+  margin: 2px;
+  width: 10px;
+  height: 10px;
+}
+.pagebuttons {
+  margin-top: 5%;
+}
