@@ -1,0 +1,91 @@
+nav {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.burger {
+  cursor: pointer;
+  z-index: 2;
+}
+.burger div {
+  width: 29px;
+  height: 3px;
+  background-color: #020f59;
+  margin: 5px;
+  border-radius: 7px;
+  transition: all 0.3s ease;
+}
+/* Side Menu */
+.side-nav {
+  height: 100%;
+  width: 0px;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  z-index: 1;
+  top: 0;
+  left: 0%;
+  background-color: #020f59;
+  opacity: 0.7;
+  overflow-x: hidden;
+  padding-top: 60px;
+}
+.side-nav {
+  clip-path: circle(0.5% at 0 0);
+  -webkit-clip-path: circle(0.5% at 0 0);
+  transition: all 1s ease;
+}
+.side-nav.open {
+  clip-path: circle(1100px at 0 0);
+  -webkit-clip-path: circle(1100px at 0 0);
+  pointer-events: all;
+}
+.side-nav a {
+  padding: 10px 10px 10px 30px;
+  text-decoration: none;
+  text-align: center;
+  font-size: 20px;
+  color: #fff;
+  display: block;
+  opacity: 0;
+  z-index: 5;
+}
+#side-menu > a.side-link::after {
+  content: "";
+  width: 0px;
+  height: 2px;
+  display: block;
+  background: white;
+  transition: 300ms;
+}
+#side-menu > a.side-link:hover::after {
+  width: 100%;
+}
+.side-nav a:hover {
+  color: #3dadf2;
+}
+a.side-link-collapse {
+  display: none;
+}
+.toggle .line1 {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+.toggle .line2 {
+  opacity: 0;
+}
+.toggle .line3 {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+/* Sidemenu animation */
+@keyframes navLinksFade {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
