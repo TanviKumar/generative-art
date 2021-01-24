@@ -1,0 +1,31 @@
+h1 {
+  margin-bottom: 5%;
+}
+.MuiPaper-root {
+  transition: none;
+  background-color: #fff;
+  width: 150px;
+  height: 150px;
+}
+.pic {
+  width: 150px;
+  height: 150px;
+  border: 2px solid white;
+}
+.contributor-name {
+  list-style: none;
+  text-decoration: none;
+}
+#contributor .MuiGrid-item:nth-child(odd) {
+  background-color: #221b3a;
+  border-radius: 0 120px 0 120px;
+  justify-content: center;
+  margin: 10px !important;
+}
+
+#contributor .MuiGrid-item:nth-child(even) {
+  background-color: #665aae;
+  border-radius: 120px 0 120px 0;
+  justify-content: center;
+  margin: 10px !important;
+}

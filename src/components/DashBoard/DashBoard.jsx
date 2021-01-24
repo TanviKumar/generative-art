@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./DashBoard.css";
+import Header from "../Header/Header";
 import Card from "../Card/Card";
 import Grid from "@material-ui/core/Grid";
 import { Container } from "@material-ui/core";
@@ -28,7 +29,7 @@ export default function DashBoard() {
   };
   return (
     <div className="dashboard">
-      <h1 className="title">Generative Art for All</h1>
+      <Header text="Generative Art for All"></Header>
       <FilterTags setFilterTag={setFilterTag} index={index}></FilterTags>
       <Container style={{ margin: "5% auto", width: "100%" }}>
         <Grid container spacing={1}>
