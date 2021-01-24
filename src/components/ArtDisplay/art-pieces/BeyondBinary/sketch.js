@@ -83,13 +83,15 @@ export default function sketch(p) {
     }
     p.pop();
   }
-  const BeyondBinary = function () {
-    this.Color1 = "#EFCF20";
-    this.Color2 = "#A083D5";
-    this.Time1 = 3;
-    this.Time2 = 3;
-    this.frameRate = 1;
-  };
+  class BeyondBinary {
+    constructor() {
+      this.Color1 = "#EFCF20";
+      this.Color2 = "#A083D5";
+      this.Time1 = 3;
+      this.Time2 = 3;
+      this.frameRate = 1;
+    }
+  }
   const gui = new dat.GUI();
   const beyondBinary = new BeyondBinary();
   let uiColor1 = gui.addColor(beyondBinary, "Color1");
