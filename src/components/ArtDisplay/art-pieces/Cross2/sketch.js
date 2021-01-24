@@ -1,3 +1,4 @@
+import * as dat from "dat.gui";
 export default function sketch(p) {
   //Definition of the lsystem class.
   function lsys() {
@@ -103,5 +104,10 @@ export default function sketch(p) {
     //frameRate()
     //noLoop()
     p.pop();
+  };
+  const gui = new dat.GUI();
+  gui.close();
+  window.onpopstate = function (e) {
+    gui.destroy();
   };
 }

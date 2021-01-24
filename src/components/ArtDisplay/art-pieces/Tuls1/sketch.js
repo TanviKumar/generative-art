@@ -1,13 +1,14 @@
+import * as dat from "dat.gui";
 export default function sketch(p) {
   // Padding around the canvas.
   let padding = 35;
 
   // Number of squares per row/column
-  let row = 8;
+  let row;
 
   // Size of grid cells (cellSize x cellSize).
   let cellSize = 80;
-  let gridSize = cellSize * row + padding * 2;
+  let gridSize;
 
   // Probability of drawing an inner rectangle.
   let chance = 0.6;
@@ -29,6 +30,8 @@ export default function sketch(p) {
   ];
 
   p.setup = function () {
+    row = uiRow.getValue();
+    gridSize = cellSize * row + padding * 2;
     p.createCanvas(gridSize, gridSize);
     p.rectMode(p.CORNER);
     p.angleMode(p.DEGREES);
@@ -38,7 +41,7 @@ export default function sketch(p) {
   };
 
   p.draw = function () {
-    p.background(shades[2]);
+    p.background(uiBg.getValue());
     for (let y = padding; y < p.height - 2 * padding; y += cellSize) {
       for (let x = padding; x < p.width - 2 * padding; x += cellSize) {
         drawCell(x + cellSize / 2, y + cellSize / 2);
@@ -53,7 +56,7 @@ export default function sketch(p) {
     p.noStroke();
     p.rectMode(p.CENTER);
     //rect(0, 0, cellSize, cellSize)
-    p.stroke(shades[1]);
+    p.stroke(uiShade.getValue());
     let v1, v2, v3, v4;
 
     // Top side
@@ -91,4 +94,32 @@ export default function sketch(p) {
 
     p.pop();
   }
+  class Tuls1 {
+    constructor() {
+      this.Shade = "#B5B682";
+      this.Background = "#28666E";
+      this.Row = 8;
+    }
+  }
+  const tuls1 = new Tuls1();
+  const gui = new dat.GUI();
+  const uiShade = gui.addColor(tuls1, "Shade");
+  const uiBg = gui.addColor(tuls1, "Background");
+  const uiRow = gui.add(tuls1, "Row", 5, 15, 1);
+  uiShade.onChange(() => {
+    p.setup();
+    p.draw();
+  });
+  uiBg.onChange(() => {
+    p.setup();
+    p.draw();
+  });
+  uiRow.onChange(() => {
+    p.setup();
+    p.draw();
+  });
+  gui.close();
+  window.onpopstate = function (e) {
+    gui.destroy();
+  };
 }

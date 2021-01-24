@@ -118,4 +118,7 @@ export default function sketch(p) {
   uiAmount.onChange(p.setup);
   uiRandom.onChange(p.setup);
   gui.close();
+  window.onpopstate = function (e) {
+    gui.destroy();
+  };
 }

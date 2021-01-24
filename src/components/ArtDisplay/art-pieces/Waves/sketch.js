@@ -1,13 +1,14 @@
+import * as dat from "dat.gui";
 export default function sketch(p) {
   // Padding around the canvas.
   let padding = 35;
 
   // Number of squares per row/column
-  let row = 8;
+  let row;
 
   // Size of grid cells (cellSize x cellSize).
   let cellSize = 80;
-  let gridSize = cellSize * row + padding * 2;
+  let gridSize;
 
   // Probability of drawing an inner rectangle.
   let chance = 0.6;
@@ -29,6 +30,8 @@ export default function sketch(p) {
   ];
 
   p.setup = function () {
+    row = uiRow.getValue();
+    gridSize = cellSize * row + padding * 2;
     p.createCanvas(gridSize, gridSize);
     p.rectMode(p.CORNER);
     p.angleMode(p.DEGREES);
@@ -38,7 +41,7 @@ export default function sketch(p) {
   };
 
   p.draw = function () {
-    p.background(shades[2]);
+    p.background(uiBg.getValue());
     for (let y = padding; y < p.height - 2 * padding; y += cellSize) {
       for (let x = padding; x < p.width - 2 * padding; x += cellSize) {
         drawCell(x + cellSize / 2, y + cellSize / 2);
@@ -49,11 +52,11 @@ export default function sketch(p) {
   function drawCell(x, y) {
     p.push();
     p.translate(x, y);
-    p.fill(shades[2]);
+    p.fill(uiBg.getValue());
     p.noStroke();
     p.rectMode(p.CENTER);
     p.rect(0, 0, cellSize, cellSize);
-    p.stroke(shades[0]);
+    p.stroke(uiStroke.getValue());
     p.rectMode(p.CORNER);
     if (p.random() > 0.5) {
       // side 1
@@ -202,4 +205,32 @@ export default function sketch(p) {
     }
     p.pop();
   }
+  class Waves {
+    constructor() {
+      this.Background = "#28666E";
+      this.Stroke = "#FEDC97";
+      this.Row = 8;
+    }
+  }
+  const waves = new Waves();
+  const gui = new dat.GUI();
+  const uiStroke = gui.addColor(waves, "Stroke");
+  const uiBg = gui.addColor(waves, "Background");
+  const uiRow = gui.add(waves, "Row", 1, 12, 1);
+  uiRow.onChange(() => {
+    p.setup();
+    p.draw();
+  });
+  uiStroke.onChange(() => {
+    p.setup();
+    p.draw();
+  });
+  uiBg.onChange(() => {
+    p.setup();
+    p.draw();
+  });
+  gui.close();
+  window.onpopstate = function (e) {
+    gui.destroy();
+  };
 }

@@ -1,3 +1,4 @@
+import * as dat from "dat.gui";
 export default function sketch(p) {
   //Definition of the lsystem class.
   class lsys {
@@ -192,5 +193,10 @@ export default function sketch(p) {
     p.stroke(c);
     p.noFill();
     if (p.mouseIsPressed) p.circle(p.mouseX, p.mouseY, 15, 15);
+  };
+  const gui = new dat.GUI();
+  gui.close();
+  window.onpopstate = function (e) {
+    gui.destroy();
   };
 }

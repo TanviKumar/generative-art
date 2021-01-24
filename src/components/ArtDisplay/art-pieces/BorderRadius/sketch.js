@@ -1,51 +1,43 @@
+import * as dat from "dat.gui";
 export default function sketch(p) {
   // Padding around the canvas.
-  var padding = 25;
-
-  // Number of squares per row/column
-  var row = 10;
-
+  let padding = 25;
   // Size of grid cells (cellSize x cellSize).
-  var cellSize = 50;
-  var gridSize = cellSize * row + padding * (row + 3);
+  let cellSize = 50;
+  let gridSize;
 
   // Probabiity of drawing an inner rectangle.
-  var chance = 0.6;
+  let chance = 0.6;
 
   // Movement
-  var m = 1;
+  let m = 1;
   // Growth/reduction
-  var g = 1;
+  let g = 1;
 
   // Extent the square can shift from center
-  var shiftLimit = 15;
+  let shiftLimit = 15;
 
-  var shades = ["#FEDC97", "#B5B682", "#28666E", "#7C9885"];
-  var shades = ["#ffe5fa", "#ffb2ff", "#e500ff", "#c402e2"];
-  var shades1 = ["#e1ff00", "#ecf79b", "#f6ff7c", "#fff600"];
-  var shades1 = ["#ffaabb", "#ff7799", "#ffbbcc", "#ff3344"];
-  var shades = [
-    "#becbd9",
-    "#f4dada",
-    "#f6ddc7",
-    "#fee2b3",
-    "#ffa299",
-    "#ad6989",
-  ];
+  let shades = ["#FEDC97", "#B5B682", "#28666E", "#7C9885"];
+  shades = ["#ffe5fa", "#ffb2ff", "#e500ff", "#c402e2"];
+  let shades1 = ["#e1ff00", "#ecf79b", "#f6ff7c", "#fff600"];
+  shades1 = ["#ffaabb", "#ff7799", "#ffbbcc", "#ff3344"];
+  shades = ["#becbd9", "#f4dada", "#f6ddc7", "#fee2b3", "#ffa299", "#ad6989"];
 
   p.setup = function () {
+    // uiRow - Number of squares per row/column
+    gridSize = cellSize * uiRow.getValue() + padding * (uiRow.getValue() + 3);
     p.createCanvas(gridSize, gridSize);
     p.rectMode(p.CENTER);
     p.angleMode(p.DEGREES);
     //noLoop()
-    p.frameRate(2);
+    p.frameRate(uiFrameRate.getValue());
     for (
-      var y = padding * 2, i = 0;
+      let y = padding * 2, i = 0;
       y < gridSize - 2 * padding;
       y += cellSize + padding, i++
     ) {
       for (
-        var x = padding * 2, j = 0;
+        let x = padding * 2, j = 0;
         x < gridSize - 2 * padding;
         x += cellSize + padding, j++
       ) {
@@ -74,8 +66,8 @@ export default function sketch(p) {
       dia = p.random(12) + 4;
       let cx = p.random(gridSize - 2 * padding) + padding;
       let cy = p.random(gridSize - 2 * padding) + padding;
-      if (p.random() > 0.5) p.fill("white");
-      else p.fill("white");
+      if (p.random() > 0.5) p.fill(uiSpotColor.getValue());
+      else p.fill(uiSpotColor.getValue());
       p.circle(cx, cy, dia, dia);
     }
   };
@@ -84,10 +76,40 @@ export default function sketch(p) {
     p.push();
     p.translate(x, y);
 
-    p.fill(shades[0]);
+    p.fill(uiShade.getValue());
     p.noStroke();
     p.square(0, 0, cellSize, m, m, m, m);
 
     p.pop();
   }
+  class BorderRadius {
+    constructor() {
+      this.SquareShade = "#becbd9";
+      this.SpotColor = "#fff";
+      this.frameRate = 2;
+      this.row = 10;
+    }
+  }
+  const borderRadius = new BorderRadius();
+  const gui = new dat.GUI();
+  let uiShade = gui.addColor(borderRadius, "SquareShade");
+  let uiSpotColor = gui.addColor(borderRadius, "SpotColor");
+  let uiFrameRate = gui.add(borderRadius, "frameRate", 1, 60, 1);
+  let uiRow = gui.add(borderRadius, "row", 5, 18, 1);
+  uiShade.onChange(() => {
+    p.setup();
+  });
+  uiSpotColor.onChange(() => {
+    p.setup();
+  });
+  uiFrameRate.onChange(() => {
+    p.setup();
+  });
+  uiRow.onChange(() => {
+    p.setup();
+  });
+  gui.close();
+  window.onpopstate = function (e) {
+    gui.destroy();
+  };
 }

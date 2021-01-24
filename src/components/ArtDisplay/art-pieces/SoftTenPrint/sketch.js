@@ -1,3 +1,4 @@
+import * as dat from "dat.gui";
 export default function sketch(p) {
   // Padding around the canvas.
   let padding = 45;
@@ -30,7 +31,7 @@ export default function sketch(p) {
   };
 
   p.draw = function () {
-    p.background(p.color("gray"));
+    p.background(p.color(uiBackground.getValue()));
     for (let y = padding; y < p.height - 2 * padding; y += cellSize) {
       for (let x = padding; x < p.width - 2 * padding; x += cellSize) {
         drawCell(x + cellSize / 2, y + cellSize / 2);
@@ -52,7 +53,7 @@ export default function sketch(p) {
     p.noStroke();
     p.rect(0, 0, cellSize, cellSize);
     p.stroke(0);
-    p.fill(shades[0]);
+    p.fill(uiFill.getValue());
     p.arc(cellSize / 2, cellSize / 2, cellSize * 2, cellSize * 2, 180, 270);
     p.translate(cellSize, 0);
     p.arc(-cellSize / 2, cellSize / 2, cellSize * 2, cellSize * 2, 270, 0);
@@ -69,8 +70,8 @@ export default function sketch(p) {
     p.fill(shades[2]);
     p.noStroke();
     p.rect(0, 0, cellSize, cellSize);
-    p.stroke(0);
-    p.strokeWeight(4);
+    p.stroke(uiStrokeColor.getValue());
+    p.strokeWeight(uiStrokeWeight.getValue());
     let r = p.random();
     if (r < 0.25) {
       p.arc(-cellSize / 2, -cellSize / 2, cellSize * 2, cellSize * 2, 0, 90);
@@ -83,4 +84,26 @@ export default function sketch(p) {
     }
     p.pop();
   }
+  class SoftTenPrint {
+    constructor() {
+      this.StrokeWeight = 4;
+      this.Background = "#C0C0C0";
+      this.StrokeColor = "#000";
+      this.Fill = "#FC766A";
+    }
+  }
+  const softTenPrint = new SoftTenPrint();
+  const gui = new dat.GUI();
+  const uiStrokeWeight = gui.add(softTenPrint, "StrokeWeight", 1, 10, 1);
+  const uiBackground = gui.addColor(softTenPrint, "Background");
+  const uiFill = gui.addColor(softTenPrint, "Fill");
+  const uiStrokeColor = gui.addColor(softTenPrint, "StrokeColor");
+  uiStrokeWeight.onChange(p.draw);
+  uiBackground.onChange(p.draw);
+  uiFill.onChange(p.draw);
+  uiStrokeColor.onChange(p.draw);
+  gui.close();
+  window.onpopstate = function (e) {
+    gui.destroy();
+  };
 }

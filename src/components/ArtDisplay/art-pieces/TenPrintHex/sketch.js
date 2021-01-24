@@ -1,3 +1,4 @@
+import * as dat from "dat.gui";
 export default function sketch(p) {
   // Padding around the canvas.
   let padding = 15;
@@ -46,8 +47,8 @@ export default function sketch(p) {
   };
 
   p.draw = function () {
-    p.background(shades[0]);
-    p.stroke(0);
+    p.background(uiShade1.getValue());
+    p.stroke(uiStroke.getValue());
     let i = 1;
     for (
       let y = padding + vSize / 2;
@@ -68,7 +69,7 @@ export default function sketch(p) {
   };
 
   function drawBorder() {
-    p.fill(shades[0]);
+    p.fill(uiShade1.getValue());
     let border = 50;
     p.noStroke();
     p.rect(border / 2, gridSize / 2, border, gridSize);
@@ -90,24 +91,24 @@ export default function sketch(p) {
     if (p.random() > 0.5) {
       p.fill(shades[1]);
       drawArc1(radii1);
-      p.fill(shades[3]);
+      p.fill(uiShade2.getValue());
       drawArc1(radii2);
       p.fill(shades[1]);
       drawArc1(radii3);
-      p.fill(shades[3]);
+      p.fill(uiShade2.getValue());
       drawArc1(radii4);
-      p.fill(shades[0]);
+      p.fill(uiShade1.getValue());
       drawArc1(radii5);
     } else {
-      p.fill(shades[3]);
+      p.fill(uiShade2.getValue());
       drawArc2(radii1);
       p.fill(shades[1]);
       drawArc2(radii2);
-      p.fill(shades[3]);
+      p.fill(uiShade2.getValue());
       drawArc2(radii3);
       p.fill(shades[1]);
       drawArc2(radii4);
-      p.fill(shades[0]);
+      p.fill(uiShade1.getValue());
       drawArc2(radii5);
     }
     p.pop();
@@ -124,4 +125,32 @@ export default function sketch(p) {
     p.arc(hSize / 4, vSize / 2, radii1, radii1, 180, 300);
     p.arc(hSize / 4, -vSize / 2, radii1, radii1, 60, 180);
   }
+  class TenPrintHex {
+    constructor() {
+      this.Shade1 = "#D1BCE3";
+      this.Shade2 = "#B5B682";
+      this.Stroke = "#000";
+    }
+  }
+  const tenPrintHex = new TenPrintHex();
+  const gui = new dat.GUI();
+  const uiShade1 = gui.addColor(tenPrintHex, "Shade1");
+  const uiShade2 = gui.addColor(tenPrintHex, "Shade2");
+  const uiStroke = gui.addColor(tenPrintHex, "Stroke");
+  uiShade1.onChange(() => {
+    p.setup();
+    p.draw();
+  });
+  uiShade2.onChange(() => {
+    p.setup();
+    p.draw();
+  });
+  uiStroke.onChange(() => {
+    p.setup();
+    p.draw();
+  });
+  gui.close();
+  window.onpopstate = function (e) {
+    gui.destroy();
+  };
 }

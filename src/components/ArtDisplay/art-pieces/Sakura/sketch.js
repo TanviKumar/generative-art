@@ -1,3 +1,4 @@
+import * as dat from "dat.gui";
 export default function sketch(p) {
   //Definition of the lsystem class.
   class lsys {
@@ -205,4 +206,9 @@ export default function sketch(p) {
       p.endShape(p.CLOSE);
     }
   }
+  const gui = new dat.GUI();
+  gui.close();
+  window.onpopstate = function (e) {
+    gui.destroy();
+  };
 }

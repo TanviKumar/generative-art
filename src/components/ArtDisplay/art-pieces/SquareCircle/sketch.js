@@ -1,3 +1,4 @@
+import * as dat from "dat.gui";
 export default function sketch(p) {
   let rad = 150;
   let steps = 10;
@@ -12,14 +13,18 @@ export default function sketch(p) {
   };
 
   p.draw = function () {
-    p.background("black");
+    p.background(uiBg.getValue());
     p.translate(p.width / 2, p.height / 2);
     p.noStroke();
     let c;
     for (let j = 150; j < 400; j += 25) {
       rad = j;
       for (let i = 0; i < 360; i += steps) {
-        c = p.color(p.random(200) + 20, p.random(20) + 20, p.random(200) + 20);
+        c = p.color(
+          p.random(200) + 20,
+          p.random(uiShade.getValue()) + 20,
+          p.random(200) + 20
+        );
         c.setAlpha(75);
         p.fill(c);
         p.rect(
@@ -32,9 +37,37 @@ export default function sketch(p) {
       if (steps > 1) steps--;
     }
     c = p.color("white");
-    c.setAlpha(60);
+    c.setAlpha(uiAlpha.getValue());
     p.fill(c);
     p.circle(-100, -120, 150);
     p.circle(120, 120, 40);
+  };
+  class SquareCircle {
+    constructor() {
+      this.Background = "#000";
+      this.Alpha = 60;
+      this.Shade = 20;
+    }
+  }
+  const squareCircle = new SquareCircle();
+  const gui = new dat.GUI();
+  const uiBg = gui.addColor(squareCircle, "Background");
+  const uiAlpha = gui.add(squareCircle, "Alpha", 1, 200, 1);
+  const uiShade = gui.add(squareCircle, "Shade", 1, 230, 1);
+  uiBg.onChange(() => {
+    p.setup();
+    p.draw();
+  });
+  uiAlpha.onChange(() => {
+    p.setup();
+    p.draw();
+  });
+  uiShade.onChange(() => {
+    p.setup();
+    p.draw();
+  });
+  gui.close();
+  window.onpopstate = function (e) {
+    gui.destroy();
   };
 }
