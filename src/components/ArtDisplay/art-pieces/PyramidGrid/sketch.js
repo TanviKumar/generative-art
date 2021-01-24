@@ -28,7 +28,7 @@ export default function sketch(p) {
     p.rectMode(p.CENTER);
     p.angleMode(p.DEGREES);
     p.noLoop();
-    p.frameRate(2);
+    p.frameRate(uiFrameRate.getValue());
   };
 
   p.draw = function () {
