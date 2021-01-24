@@ -28,7 +28,7 @@ export default function sketch(p) {
     p.rectMode(p.CENTER);
     p.angleMode(p.DEGREES);
     //noLoop()
-    p.frameRate(10);
+    p.frameRate(uiFrameRate.getValue());
     for (let i = 0; i < uiRow.getValue(); i++) {
       centers[i] = new Array(14);
     }
