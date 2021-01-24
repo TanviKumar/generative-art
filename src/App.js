@@ -3,6 +3,7 @@ import DashBoard from "./components/DashBoard/DashBoard";
 import ArtDisplay from "./components/ArtDisplay/ArtDisplay";
 import AboutUs from "./components/AboutUs/AboutUs";
 import Contributors from "./components/Contributors/Contributors";
+import SideBar from "./components/SideBar/SideBar";
 import {
   BrowserRouter as Router,
   Route,
@@ -10,7 +11,6 @@ import {
   useRouteMatch,
   useParams,
 } from "react-router-dom";
-import SideBar from "./components/SideBar/SideBar";
 function App() {
   return (
     <Router>
