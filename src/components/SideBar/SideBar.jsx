@@ -55,6 +55,7 @@ export default function SideBar() {
         <a
           className="side-link"
           target="_blank"
+          rel="noreferrer"
           href="https://editor.p5js.org/rt1301/sketches/D4LziJb9-"
         >
           Sample Template

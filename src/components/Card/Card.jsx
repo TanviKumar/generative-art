@@ -6,7 +6,7 @@ export default function Card(props) {
   return (
     <div className="card">
       <div className="front">
-        <img className="thumbnail" src={image} />
+        <img className="thumbnail" src={image} alt="" />
         <h3 className="name">{name}</h3>
         <p className="author">By {author}</p>
       </div>
@@ -18,7 +18,7 @@ export default function Card(props) {
           <Link to={linkUrl} className="btn">
             Live
           </Link>
-          <a className="btn" href={codeUrl} target="_blank">
+          <a className="btn" href={codeUrl} rel="noreferrer" target="_blank">
             Code
           </a>
         </div>

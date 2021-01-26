@@ -30,21 +30,21 @@ export default function sketch(p) {
   lsys.prototype.generate = function () {
     this.len *= 0.5; //So the tree becomes denser instead of larger.
     this.branchValue += 1; //To ensure increased thickness of trunk.
-    var nextSentence = "";
+    let nextSentence = "";
     for (let i = 0; i < this.sentence.length; i++) {
       let current = this.sentence.charAt(i);
-      if (current == current.toLowerCase()) {
+      if (current === current.toLowerCase()) {
         current = current.toUpperCase();
       }
-      var found = false;
+      let found = false;
 
-      if (current == this.rules1.letter) {
+      if (current === this.rules1.letter) {
         found = true;
         nextSentence += this.rules1.becomes;
-      } else if (current == this.rules2.letter) {
+      } else if (current === this.rules2.letter) {
         found = true;
         nextSentence += this.rules2.becomes;
-      } else if (current == this.rules3.letter) {
+      } else if (current === this.rules3.letter) {
         found = true;
         nextSentence += this.rules3.becomes;
       }
@@ -61,7 +61,7 @@ export default function sketch(p) {
     for (let i = 0; i < this.sentence.length; i++) {
       let current = this.sentence.charAt(i);
 
-      if (current == "F" || current == "f") {
+      if (current === "F" || current === "f") {
         if (p.random() < 0.8) {
           // All the designing happens here!
 
@@ -98,16 +98,16 @@ export default function sketch(p) {
           //point(0,0)
           //point(0, -this.len)
         }
-      } else if (current == "+") {
+      } else if (current === "+") {
         p.rotate(this.angle * parseInt(this.sentence.charAt(i + 1)));
         i++;
-      } else if (current == "-") {
+      } else if (current === "-") {
         p.rotate(-this.angle * parseInt(this.sentence.charAt(i + 1)));
         i++;
-      } else if (current == "[") {
+      } else if (current === "[") {
         this.branchValue -= 1;
         p.push();
-      } else if (current == "]") {
+      } else if (current === "]") {
         this.branchValue += 1;
         p.pop();
       }
@@ -115,7 +115,7 @@ export default function sketch(p) {
   };
 
   function plantgen() {
-    var plant = new lsys();
+    let plant = new lsys();
 
     plant.angle = p.radians(p.ceil(p.random(3) + 1));
     if (p.random() < 0.33) {
@@ -144,7 +144,7 @@ export default function sketch(p) {
     // Set background and canvas
     p.createCanvas(900, 740);
     p.angleMode(p.RADIANS);
-    let colorValue = p.color("#ffdedd");
+    // let colorValue = p.color("#ffdedd");
     p.setGradient(p.color(255, 204, 0), p.color(255));
 
     p.addSpots();
@@ -153,7 +153,7 @@ export default function sketch(p) {
 
     for (let bush = 0; bush < 3; bush++) {
       for (let n = 0; n < 10; n++) {
-        var plant = plantgen();
+        let plant = plantgen();
         for (let i = 0; i < 4; ++i) {
           plant.generate();
         }
@@ -168,8 +168,8 @@ export default function sketch(p) {
   p.setGradient = function (c1, c2) {
     // noprotect
     p.noFill();
-    for (var y = 0; y < p.height; y++) {
-      var c = p.lerpColor(c1, c2, y / (p.height * 1.2));
+    for (let y = 0; y < p.height; y++) {
+      let c = p.lerpColor(c1, c2, y / (p.height * 1.2));
       p.stroke(c);
       p.line(0, y, p.width, y);
     }
@@ -177,7 +177,7 @@ export default function sketch(p) {
 
   p.addSpots = function () {
     p.noFill();
-    var c = p.color("white");
+    let c = p.color("white");
     c.setAlpha(100);
     p.stroke(c);
     let i = 0;
@@ -188,7 +188,7 @@ export default function sketch(p) {
   };
 
   p.mouseDragged = function () {
-    var c = p.color("#808080");
+    let c = p.color("#808080");
     c.setAlpha(150);
     p.stroke(c);
     p.noFill();

@@ -20,15 +20,15 @@ export default function sketch(p) {
   lsys.prototype.generate = function () {
     this.len *= 0.5; //So the tree becomes denser instead of larger.
     this.branchValue += 1; //To ensure increased thickness of trunk.
-    var nextSentence = "";
+    let nextSentence = "";
     for (let i = 0; i < this.sentence.length; i++) {
       let current = this.sentence.charAt(i);
-      if (current == current.toLowerCase()) {
+      if (current === current.toLowerCase()) {
         current = current.toUpperCase();
       }
-      var found = false;
+      let found = false;
 
-      if (current == this.rules.letter) {
+      if (current === this.rules.letter) {
         found = true;
         nextSentence += this.rules.becomes;
       }
@@ -45,7 +45,7 @@ export default function sketch(p) {
     for (let i = 0; i < this.sentence.length; i++) {
       let current = this.sentence.charAt(i);
 
-      if (current == "F" || current == "f") {
+      if (current === "F" || current === "f") {
         // All the designing happens here!
 
         let lineColor = p.lerpColor(
@@ -63,25 +63,25 @@ export default function sketch(p) {
         p.point(0, 0);
         //point(0, -this.len)
         p.translate(0, -this.len);
-      } else if (current == "+") {
+      } else if (current === "+") {
         p.rotate(this.angle);
-      } else if (current == "-") {
+      } else if (current === "-") {
         p.rotate(-this.angle);
-      } else if (current == "[") {
+      } else if (current === "[") {
         this.branchValue -= 1;
         p.push();
-      } else if (current == "]") {
+      } else if (current === "]") {
         this.branchValue += 1;
         p.pop();
       }
     }
   };
 
-  var timer = 0;
+  let timer = 0;
 
   //Runs on loading.
   p.draw = function () {
-    var lsysObject = new lsys(); //creates object of the class tree.
+    let lsysObject = new lsys(); //creates object of the class tree.
     timer += 220;
     // Set background and canvas
     p.createCanvas(740, 740);

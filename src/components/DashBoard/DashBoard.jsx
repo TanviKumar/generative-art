@@ -33,6 +33,8 @@ export default function DashBoard() {
       <FilterTags setFilterTag={setFilterTag} index={index}></FilterTags>
       <Container style={{ margin: "5% auto", width: "100%" }}>
         <Grid container spacing={1}>
+          {" "}
+          {/*eslint-disable-next-line*/}
           {data.map((content) => {
             const flag = content.tags.find((el) => {
               return el === filterTag;

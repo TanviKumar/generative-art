@@ -37,7 +37,7 @@ export default function sketch(p) {
       if (p.random() < chance) {
         let c1Val = p.color(p.random(250), p.random(250), p.random(250));
         let c2Val = p.color(p.random(250), p.random(250), p.random(250));
-        let c3Val = p.random(250);
+        // let c3Val = p.random(250);
         let lerp = p.lerpColor(c1Val, c2Val, uiFactor.getValue() / 100);
         let rotateBy = p.random(5);
         if (p.random() > 0.5) {

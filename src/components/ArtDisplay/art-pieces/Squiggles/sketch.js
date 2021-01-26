@@ -10,16 +10,7 @@ export default function sketch(p) {
   let cellSize;
   let gridSize;
 
-  // Probability of drawing an inner rectangle.
-  let chance = 0.6;
-
-  // Gap between squares
-  let gap = 10;
-
-  // Extent the square can shift from center
-  let shiftLimit = 1;
-
-  let shades = ["#FEDC97", "#B5B682", "#28666E", "#7C9885"];
+  // let shades = ["#FEDC97", "#B5B682", "#28666E", "#7C9885"];
 
   p.setup = function () {
     cellSize = uiCellSize.getValue();

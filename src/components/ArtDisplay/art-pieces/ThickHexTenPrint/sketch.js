@@ -3,27 +3,15 @@ export default function sketch(p) {
   // Padding around the canvas.
   let padding = 15;
 
-  // Number of squares per row/column
-  let row = 6;
-
   // Size of grid cells (cellSize x cellSize).
   let hSize = 100;
   let radii3 = hSize / 2;
-  let radii4 = hSize / 3;
-  let radii2 = (hSize * 2) / 3;
-  let radii5 = hSize / 6;
-  let radii1 = (hSize * 5) / 6;
+  // let radii4 = hSize / 3;
+  // let radii2 = (hSize * 2) / 3;
+  // let radii5 = hSize / 6;
+  // let radii1 = (hSize * 5) / 6;
   let vSize;
   let gridSize = 600 + padding * 3;
-
-  // Probability of drawing an inner rectangle.
-  let chance = 0.6;
-
-  // Gap between squares
-  let gap = 10;
-
-  // Extent the square can shift from center
-  let shiftLimit = 1;
 
   let shades = [
     "#D1BCE3",

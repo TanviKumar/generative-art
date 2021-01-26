@@ -6,22 +6,10 @@ export default function sketch(p) {
   let cellSize = 50;
   let gridSize;
 
-  // Probabiity of drawing an inner rectangle.
-  let chance = 0.6;
-
   // Movement
   let m = 1;
   // Growth/reduction
   let g = 1;
-
-  // Extent the square can shift from center
-  let shiftLimit = 15;
-
-  let shades = ["#FEDC97", "#B5B682", "#28666E", "#7C9885"];
-  shades = ["#ffe5fa", "#ffb2ff", "#e500ff", "#c402e2"];
-  let shades1 = ["#e1ff00", "#ecf79b", "#f6ff7c", "#fff600"];
-  shades1 = ["#ffaabb", "#ff7799", "#ffbbcc", "#ff3344"];
-  shades = ["#becbd9", "#f4dada", "#f6ddc7", "#fee2b3", "#ffa299", "#ad6989"];
 
   p.setup = function () {
     // uiRow - Number of squares per row/column
