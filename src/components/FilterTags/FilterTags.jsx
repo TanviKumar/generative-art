@@ -27,7 +27,7 @@ export default function FilterTags(props) {
       <Grid style={{ width: "80%", margin: "auto" }} container spacing={1}>
         {filterTags.map((tag, key) => {
           return (
-            <Grid item xl={4} l={4} xs={12} sm>
+            <Grid key={key} item xl={4} l={4} xs={12} sm>
               <Button
                 variant="contained"
                 color="primary"
