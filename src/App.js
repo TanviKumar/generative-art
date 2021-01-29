@@ -7,7 +7,7 @@ import Contributors from "./components/Contributors/Contributors";
 import SideBar from "./components/SideBar/SideBar";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 function App() {
-  const containerRef = useRef(null);
+  const containerRef = useRef(null); // eslint-disable-next-line
   const data = {
     ease: 0.1,
     prev: 0,
@@ -24,7 +24,7 @@ function App() {
     });
   }, [data]);
   useEffect(() => {
-    requestAnimationFrame(() => smoothScroll());
+    requestAnimationFrame(() => smoothScroll()); // eslint-disable-next-line
   }, []);
   return (
     <Router>
