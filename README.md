@@ -94,7 +94,13 @@ genertative-art/
 - **Be considerate.** Think about how your contribution will affect others in the community.
 - **Be open minded.** Embrace new people and new ideas. Our community is continually evolving and we welcome positive change.
 
-### Contributors
+## Screenshots of the Website
+
+![alt text](screenshots/home-page.png)
+<br>
+![alt text](screenshots/template.png)
+
+## Contributors
 
 1. [Tanvi Kumar](https://github.com/TanviKumar)
 2. [Balaji Jayashrri](https://github.com/Jayashrri)
