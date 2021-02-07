@@ -4,21 +4,11 @@ export default function sketch(p) {
   let padding = 15;
 
   // Number of squares per row/column
-  let row = 2;
   let gap = 20;
 
   // Size of grid cells (cellSize x cellSize).
   let cellSize = 200;
   let gridSize;
-
-  // Probability of drawing an inner rectangle.
-  let chance = 0.6;
-
-  // Number of inner rectangles
-  let c = 10;
-
-  // Extent the square can shift from center
-  let shiftLimit = 1;
 
   let shades = ["#FEDC97", "#98777B", "#FFC1CC", "#65000B"];
 
@@ -57,10 +47,10 @@ export default function sketch(p) {
       rx = rx - (rx % 20);
       let ry = p.floor(p.random(100)) + 30;
       ry = ry - (ry % 20);
-      if (i % 4 == 0) p.rect(0, rx, ry, cellSize - rx);
-      if (i % 4 == 1) p.rect(cellSize - rx, 0, rx, ry);
-      if (i % 4 == 2) p.rect(0, 0, ry, rx);
-      if (i % 4 == 3) p.rect(cellSize - rx, cellSize - ry, rx, ry);
+      if (i % 4 === 0) p.rect(0, rx, ry, cellSize - rx);
+      if (i % 4 === 1) p.rect(cellSize - rx, 0, rx, ry);
+      if (i % 4 === 2) p.rect(0, 0, ry, rx);
+      if (i % 4 === 3) p.rect(cellSize - rx, cellSize - ry, rx, ry);
     }
     p.pop();
   }

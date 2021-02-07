@@ -33,18 +33,18 @@ export default function sketch(p) {
       let nextSentence = "";
       for (let i = 0; i < this.sentence.length; i++) {
         let current = this.sentence.charAt(i);
-        if (current == current.toLowerCase()) {
+        if (current === current.toLowerCase()) {
           current = current.toUpperCase();
         }
         let found = false;
 
-        if (current == this.rules1.letter) {
+        if (current === this.rules1.letter) {
           found = true;
           nextSentence += this.rules1.becomes;
-        } else if (current == this.rules2.letter) {
+        } else if (current === this.rules2.letter) {
           found = true;
           nextSentence += this.rules2.becomes;
-        } else if (current == this.rules3.letter) {
+        } else if (current === this.rules3.letter) {
           found = true;
           nextSentence += this.rules3.becomes;
         }
@@ -60,7 +60,7 @@ export default function sketch(p) {
       for (let i = 0; i < this.sentence.length; i++) {
         let current = this.sentence.charAt(i);
 
-        if (current == "F" || current == "f") {
+        if (current === "F" || current === "f") {
           if (p.random() < 0.9) {
             // All the designing happens here!
             let lineColor = p.lerpColor(
@@ -88,16 +88,16 @@ export default function sketch(p) {
               }
             }
           }
-        } else if (current == "+") {
+        } else if (current === "+") {
           p.rotate(this.angle * parseInt(this.sentence.charAt(i + 1)));
           i++;
-        } else if (current == "-") {
+        } else if (current === "-") {
           p.rotate(-this.angle * parseInt(this.sentence.charAt(i + 1)));
           i++;
-        } else if (current == "[") {
+        } else if (current === "[") {
           this.branchValue -= 1;
           p.push();
-        } else if (current == "]") {
+        } else if (current === "]") {
           this.branchValue += 1;
           p.pop();
         }
@@ -121,7 +121,7 @@ export default function sketch(p) {
     // Set background and canvas
     p.createCanvas(1200, 780);
     p.angleMode(p.RADIANS);
-    let colorValue = p.color("#ffdedd");
+    // let colorValue = p.color("#ffdedd");
     setGradient(p.color(226, 181, 223), p.color(219, 255, 252));
 
     p.resetMatrix();

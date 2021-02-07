@@ -10,15 +10,6 @@ export default function sketch(p) {
   let cellSize = 80;
   let gridSize;
 
-  // Probability of drawing an inner rectangle.
-  let chance = 0.6;
-
-  // Gap between squares
-  let gap = 10;
-
-  // Extent the square can shift from center
-  let shiftLimit = 1;
-
   let shades = [
     "#FEDC97",
     "#B5B682",
@@ -53,8 +44,8 @@ export default function sketch(p) {
     p.push();
     p.translate(x, y);
     let c1 = p.color(shades[0]);
-    let c2 = p.color(shades[1]);
-    let c3 = p.color(shades[2]);
+    // let c2 = p.color(shades[1]);
+    // let c3 = p.color(shades[2]);
     c1.setAlpha(uiAlpha.getValue());
     p.fill(c1);
     //noStroke()
@@ -105,19 +96,19 @@ export default function sketch(p) {
     // Right one
     if (p.random() > 0.5) {
       //line(0, 0, cellSize/2, -cellSize/2)
-      if (b != 1) {
+      if (b !== 1) {
         p.line(0, 0, 0, cellSize / 2);
         p.arc(cellSize / 2, 0, cellSize, cellSize, 180, 270);
-      } else if (l != 1) {
+      } else if (l !== 1) {
         p.line(0, 0, -cellSize / 2, 0);
         p.arc(0, -cellSize / 2, cellSize, cellSize, 0, 90);
       }
     } else {
       //line(0, 0, -cellSize/2, cellSize/2)
-      if (t != 1) {
+      if (t !== 1) {
         p.line(0, 0, 0, -cellSize / 2);
         p.arc(-cellSize / 2, 0, cellSize, cellSize, 0, 90);
-      } else if (r != 1) {
+      } else if (r !== 1) {
         p.line(0, 0, cellSize / 2, 0);
         p.arc(0, cellSize / 2, cellSize, cellSize, 180, 270);
       }

@@ -4,7 +4,6 @@ import Header from "../Header/Header";
 import Axios from "axios";
 import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
-import Container from "@material-ui/core/Container";
 export default function Contributors() {
   const [data, setData] = useState([]);
   useEffect(() => {
