@@ -45,8 +45,8 @@ This website is made using **HTML, CSS, React.js and p5.js** technologies.
    $ git push
    ```
 
-4. Commit to your repository at your github account and create a new PR. Click the _Pull Request_ tab on your fork page and then click the green button _New Pull Request_.
-5. Before submitting the PR, make sure to run `npm run format` on your project-directory to make the code properly formatted.
+4. Before submitting the PR, make sure to run `npm run format` on your project-directory to make the code properly formatted.
+5. Commit to your repository at your github account and create a new PR. Click the _Pull Request_ tab on your fork page and then click the green button _New Pull Request_.
 
 ## PR Format
 
@@ -56,25 +56,12 @@ _The Pull-Request should contain the following information._
 2. Feature Added/Changed
 3. Screenshots of Change
 
-## File Structure
-
-In the repository, there are two main directories which we need to focus:
-
-```
-genertative-art/
-    src/
-    public/
-```
-
-- `src/` - All the different components that are present in the website
-
-  - `components/`- The Website is made using React.js Framework and this directory contains all the different React Components
-    - `ArtDisplay/` - This repository contains all the different P5.js sketches and the `ArtDisplay` Component which renders all the different sketches. **If you want to add a new art-piece to the project, a sample template is given in this directory for reference**.
-    - `Card/` - It contains the `Card` component used to display the information regarding all art-pieces.
-    - `Dashboard/` - It contains the `Dashboard` component which renders the homepage with all the different art-pieces.
-    - `App.js` - It renders all the different React components of the website.
-
-- `public/` - It contains the `data.json` file which contains the details regarding all the art-pieces. **For adding a new-art piece, the data related to it needs to be added to this file first.** This directory also contains `contributor-data.json` file which contains the information regarding the contributors to the project.
+## How to add a new art-piece?
+1. In the `src/` directory go to `ArtDisplay/art-pieces` directory.
+2. Follow the sample template provided in `0_Template/`, for creating a new art-piece component (**don't change the code in the Template folder itself**).
+3. After making the art-piece component, go to `ArtDisplay.jsx` file and add a new React Router route for the new art-piece.
+4. In the `public/data.json` file, add the details for your new art-piece.
+5. Make a PR.
 
 ## Generative-Art Code of Conduct
 
@@ -94,7 +81,13 @@ genertative-art/
 - **Be considerate.** Think about how your contribution will affect others in the community.
 - **Be open minded.** Embrace new people and new ideas. Our community is continually evolving and we welcome positive change.
 
-### Contributors
+## Screenshots of the Website
+
+![alt text](screenshots/home-page.png)
+<br>
+![alt text](screenshots/template.png)
+
+## Contributors
 
 1. [Tanvi Kumar](https://github.com/TanviKumar)
 2. [Balaji Jayashrri](https://github.com/Jayashrri)
