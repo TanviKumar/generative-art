@@ -3,7 +3,7 @@
     "name": "Beyond Binary",
     "desc": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga, amet?",
     "linkUrl": "/art/beyond_binary",
-    "codeUrl": "https://github.com/TanviKumar/generative-art/blob/master/assets/beyond_binary/sketch.js",
+    "codeUrl": "https://editor.p5js.org/TanviKumar/sketches/2coPm8Xe",
     "image": "./static/images/beyond_binary.png",
     "author": "Tanvi Kumar",
     "tags": [1, 0, 6, 2, 3]
@@ -12,7 +12,7 @@
     "name": "Border Radius",
     "desc": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga, amet?",
     "linkUrl": "/art/border_radius",
-    "codeUrl": "https://github.com/TanviKumar/generative-art/blob/master/assets/border_radius/sketch.js",
+    "codeUrl": "https://editor.p5js.org/TanviKumar/sketches/TVuf_UpYC",
     "image": "./static/images/border_radius.png",
     "author": "Tanvi Kumar",
     "tags": [0, 2, 6, 3]
@@ -21,7 +21,7 @@
     "name": "Card",
     "desc": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga, amet?",
     "linkUrl": "/art/card",
-    "codeUrl": "https://github.com/TanviKumar/generative-art/blob/master/assets/card/sketch.js",
+    "codeUrl": "https://editor.p5js.org/TanviKumar/sketches/MxaW1Sqfu",
     "image": "./static/images/card.png",
     "author": "Tanvi Kumar",
     "tags": [0, 8, 6, 1]
@@ -30,7 +30,7 @@
     "name": "Cross",
     "desc": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga, amet?",
     "linkUrl": "/art/cross",
-    "codeUrl": "https://github.com/TanviKumar/generative-art/blob/master/assets/cross/sketch.js",
+    "codeUrl": "https://editor.p5js.org/TanviKumar/sketches/tg-dtEXEg",
     "image": "./static/images/cross.png",
     "author": "Tanvi Kumar",
     "tags": [0, 8, 6, 1, 2, 3]
@@ -39,7 +39,7 @@
     "name": "Cross2",
     "desc": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga, amet?",
     "linkUrl": "/art/cross2",
-    "codeUrl": "https://github.com/TanviKumar/generative-art/blob/master/assets/cross2/sketch.js",
+    "codeUrl": "https://editor.p5js.org/TanviKumar/sketches/ku759_p0Z",
     "image": "./static/images/cross2.png",
     "author": "Tanvi Kumar",
     "tags": [0, 8, 6, 1, 2, 3]
@@ -48,7 +48,7 @@
     "name": "Dinner Light",
     "desc": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga, amet?",
     "linkUrl": "/art/dinner_light",
-    "codeUrl": "https://github.com/TanviKumar/generative-art/blob/master/assets/dinner_light/sketch.js",
+    "codeUrl": "https://editor.p5js.org/TanviKumar/sketches/O-Tqmbp29",
     "image": "./static/images/dinner_light.png",
     "author": "Tanvi Kumar",
     "tags": [0, 2, 6]
@@ -57,7 +57,7 @@
     "name": "Fade",
     "desc": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga, amet?",
     "linkUrl": "/art/fade",
-    "codeUrl": "https://github.com/TanviKumar/generative-art/blob/master/assets/fade/sketch.js",
+    "codeUrl": "https://editor.p5js.org/TanviKumar/sketches/w8F02tDG1",
     "image": "./static/images/fade.png",
     "author": "Tanvi Kumar",
     "tags": [0, 2, 6]
@@ -66,7 +66,7 @@
     "name": "Flower Tree",
     "desc": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga, amet?",
     "linkUrl": "/art/flower_tree",
-    "codeUrl": "https://github.com/TanviKumar/generative-art/blob/master/assets/flower_tree/sketch.js",
+    "codeUrl": "https://editor.p5js.org/TanviKumar/sketches/UGv7tySMm",
     "image": "./static/images/flower_tree.png",
     "author": "Tanvi Kumar",
     "tags": [0, 8, 3, 1, 6]
@@ -75,7 +75,7 @@
     "name": "Hazy Pyramids",
     "desc": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga, amet?",
     "linkUrl": "/art/hazy_pyramids",
-    "codeUrl": "https://github.com/TanviKumar/generative-art/blob/master/assets/hazy_pyramids/sketch.js",
+    "codeUrl": "https://editor.p5js.org/TanviKumar/sketches/u0P_5Ox3sy",
     "image": "./static/images/hazy_pyramid.png",
     "author": "Tanvi Kumar",
     "tags": [0, 4, 2, 3, 5, 1]
@@ -84,7 +84,7 @@
     "name": "Pentaplex",
     "desc": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga, amet?",
     "linkUrl": "/art/pentaplex",
-    "codeUrl": "https://github.com/TanviKumar/generative-art/blob/master/assets/pentaplex/sketch.js",
+    "codeUrl": "https://editor.p5js.org/TanviKumar/sketches/6vkz8D7WQ",
     "image": "./static/images/pentaplex.png",
     "author": "Tanvi Kumar",
     "tags": [0, 8, 6, 1, 2, 3]
@@ -93,7 +93,7 @@
     "name": "Pyramid Grid",
     "desc": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga, amet?",
     "linkUrl": "/art/pyramid_grid",
-    "codeUrl": "https://github.com/TanviKumar/generative-art/blob/master/assets/pyramid_grid/sketch.js",
+    "codeUrl": "https://editor.p5js.org/TanviKumar/sketches/UbCHH78qr",
     "image": "./static/images/pyramid_grid.png",
     "author": "Tanvi Kumar",
     "tags": [0, 4, 2, 5, 1]
@@ -102,7 +102,7 @@
     "name": "Random Walker",
     "desc": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga, amet?",
     "linkUrl": "/art/random_walker",
-    "codeUrl": "https://github.com/TanviKumar/generative-art/blob/master/assets/random_walker/sketch.js",
+    "codeUrl": "https://editor.p5js.org/TanviKumar/sketches/zzv9_hB1e",
     "image": "./static/images/random_walker.png",
     "author": "Tanvi Kumar",
     "tags": [0, 3, 6, 1, 7]
@@ -111,7 +111,7 @@
     "name": "Sakura",
     "desc": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga, amet?",
     "linkUrl": "/art/sakura",
-    "codeUrl": "https://github.com/TanviKumar/generative-art/blob/master/assets/sakura/sketch.js",
+    "codeUrl": "https://editor.p5js.org/TanviKumar/sketches/JrSwMnkqj",
     "image": "./static/images/sakura.png",
     "author": "Tanvi Kumar",
     "tags": [0, 1, 8, 6]
@@ -120,7 +120,7 @@
     "name": "Soft Ten Print",
     "desc": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga, amet?",
     "linkUrl": "/art/soft_ten_print",
-    "codeUrl": "https://github.com/TanviKumar/generative-art/blob/master/assets/soft_ten_print/sketch.js",
+    "codeUrl": "https://editor.p5js.org/TanviKumar/sketches/bk_cftKzJ",
     "image": "./static/images/soft_ten_print.png",
     "author": "Tanvi Kumar",
     "tags": [0, 1, 2, 6]
@@ -129,7 +129,7 @@
     "name": "Square Circle",
     "desc": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga, amet?",
     "linkUrl": "/art/square_circle",
-    "codeUrl": "https://github.com/TanviKumar/generative-art/blob/master/assets/square_circle/sketch.js",
+    "codeUrl": "https://editor.p5js.org/TanviKumar/sketches/DlJIczkAv",
     "image": "./static/images/square_circle.png",
     "author": "Tanvi Kumar",
     "tags": [0, 1, 6]
@@ -138,7 +138,7 @@
     "name": "Squiggles",
     "desc": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga, amet?",
     "linkUrl": "/art/squiggles",
-    "codeUrl": "https://github.com/TanviKumar/generative-art/blob/master/assets/squiggles/sketch.js",
+    "codeUrl": "https://editor.p5js.org/TanviKumar/sketches/zFCF7GU3g",
     "image": "./static/images/squiggles.png",
     "author": "Tanvi Kumar",
     "tags": [0, 1, 3, 2, 6]
@@ -147,7 +147,7 @@
     "name": "Ten Print 1",
     "desc": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga, amet?",
     "linkUrl": "/art/ten_print_1",
-    "codeUrl": "https://github.com/TanviKumar/generative-art/blob/master/assets/ten_print_1/sketch.js",
+    "codeUrl": "https://editor.p5js.org/TanviKumar/sketches/6IlQfN--Q",
     "image": "./static/images/ten_print_1.png",
     "author": "Tanvi Kumar",
     "tags": [0, 1, 3, 2, 6]
@@ -156,7 +156,7 @@
     "name": "Ten Print Hex",
     "desc": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga, amet?",
     "linkUrl": "/art/ten_print_hex",
-    "codeUrl": "https://github.com/TanviKumar/generative-art/blob/master/assets/ten_print_hex/sketch.js",
+    "codeUrl": "https://editor.p5js.org/TanviKumar/sketches/PgYDJeMju",
     "image": "./static/images/ten_print_hex.png",
     "author": "Tanvi Kumar",
     "tags": [0, 1, 2, 6]
@@ -165,7 +165,7 @@
     "name": "Thick Hex Ten Print",
     "desc": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga, amet?",
     "linkUrl": "/art/thick_hex_ten_print",
-    "codeUrl": "https://github.com/TanviKumar/generative-art/blob/master/assets/thick_hex_ten_print/sketch.js",
+    "codeUrl": "https://editor.p5js.org/TanviKumar/sketches/rPGK6pvZo",
     "image": "./static/images/thick_hex_ten_print.png",
     "author": "Tanvi Kumar",
     "tags": [0, 1, 2, 6]
@@ -174,7 +174,7 @@
     "name": "Tuls 1",
     "desc": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga, amet?",
     "linkUrl": "/art/tuls1",
-    "codeUrl": "https://github.com/TanviKumar/generative-art/blob/master/assets/tuls1/sketch.js",
+    "codeUrl": "https://editor.p5js.org/TanviKumar/sketches/Nd8cd4n_A",
     "image": "./static/images/tuls1.png",
     "author": "Tanvi Kumar",
     "tags": [0, 1, 2, 6]
@@ -183,7 +183,7 @@
     "name": "Tuls 2",
     "desc": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga, amet?",
     "linkUrl": "/art/tuls2",
-    "codeUrl": "https://github.com/TanviKumar/generative-art/blob/master/assets/tuls2/sketch.js",
+    "codeUrl": "https://editor.p5js.org/TanviKumar/sketches/Q5ua3DwvG",
     "image": "./static/images/tuls2.png",
     "author": "Tanvi Kumar",
     "tags": [0, 1, 2, 6]
@@ -192,7 +192,7 @@
     "name": "Tuls 3",
     "desc": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga, amet?",
     "linkUrl": "/art/tuls3",
-    "codeUrl": "https://github.com/TanviKumar/generative-art/blob/master/assets/tuls3/sketch.js",
+    "codeUrl": "https://editor.p5js.org/TanviKumar/sketches/rp2oZPw37",
     "image": "./static/images/tuls3.png",
     "author": "Tanvi Kumar",
     "tags": [0, 1, 2, 6]
@@ -201,7 +201,7 @@
     "name": "Tuls 4",
     "desc": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga, amet?",
     "linkUrl": "/art/tuls4",
-    "codeUrl": "https://github.com/TanviKumar/generative-art/blob/master/assets/tuls4/sketch.js",
+    "codeUrl": "https://editor.p5js.org/TanviKumar/sketches/cusLRX-un",
     "image": "./static/images/tuls4.png",
     "author": "Tanvi Kumar",
     "tags": [0, 1, 2, 6]
@@ -210,7 +210,7 @@
     "name": "Tuls 5",
     "desc": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga, amet?",
     "linkUrl": "/art/tuls5",
-    "codeUrl": "https://github.com/TanviKumar/generative-art/blob/master/assets/tuls5/sketch.js",
+    "codeUrl": "https://editor.p5js.org/TanviKumar/sketches/f3Pda5tzA",
     "image": "./static/images/tuls5.png",
     "author": "Tanvi Kumar",
     "tags": [0, 1, 2, 6]
@@ -219,7 +219,7 @@
     "name": "Vera Molnar",
     "desc": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga, amet?",
     "linkUrl": "/art/vera_molnar",
-    "codeUrl": "https://github.com/TanviKumar/generative-art/blob/master/assets/vera_molnar/sketch.js",
+    "codeUrl": "https://editor.p5js.org/TanviKumar/sketches/DaMTQFO1",
     "image": "./static/images/vera_molnar.png",
     "author": "Tanvi Kumar",
     "tags": [0, 1, 2, 6]
@@ -228,7 +228,7 @@
     "name": "Waves",
     "desc": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga, amet?",
     "linkUrl": "/art/waves",
-    "codeUrl": "https://github.com/TanviKumar/generative-art/blob/master/assets/waves/sketch.js",
+    "codeUrl": "https://editor.p5js.org/TanviKumar/sketches/JIq_CUHc9",
     "image": "./static/images/waves.png",
     "author": "Tanvi Kumar",
     "tags": [0, 1, 2, 6]
