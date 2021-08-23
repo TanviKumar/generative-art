@@ -232,5 +232,14 @@
     "image": "./static/images/waves.png",
     "author": "Tanvi Kumar",
     "tags": [0, 1, 2, 6]
+  },
+  {
+    "name": "Collatz",
+    "desc": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga, amet?",
+    "linkUrl": "/art/collatz",
+    "codeUrl": "https://editor.p5js.org/anuragnitt/sketches/2QxlA4fYZ",
+    "image": "./static/images/collatz.png",
+    "author": "Anurag Goyal",
+    "tags": [0, 1, 6]
   }
 ]
