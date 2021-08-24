@@ -1,134 +1,98 @@
-// terminating condition for recursion
+// maximum limit of collatz number
 var limit = 10000;
 
-// used to reduce the lengths of lines
-var compressRatio = limit / 50;
+// initial coordinates for translation
+var centX = 5;
+var centY = 1.9;
+
+// ratio to reduce dimensions
+var compressRatio = 0.18e+7;
+
+// maximum size of nodeStack
+var stackSizeLimit = 50000;
 
 function setup() {
-    createCanvas(1300, 1100);
+    createCanvas(1000, 900);
     angleMode(DEGREES);
     background(0);
-    strokeWeight(1.1);
-}
-
-function setStroke(seed) {
-    let red = 255 * noise(seed);
-    let green = 255 * (1 - noise(seed));
-    let blue = 255 * noise(seed);
-    stroke(red, green, blue);
+    strokeWeight(1);
+    noLoop();
 }
 
 function draw() {
-    translate(width / 4, height / 1.9);
+    translate(width / centX, height / centY);
     push();
-    //collatzRecursive(1, 0);
     collatzIterative();
     pop();
 }
 
-function collatzRecursive(number, diff) {
-    if (number < 1) {
-        return;
-    }
-
-    if (number > limit) {
-        return;
-    }
-
-    rot_angle = diff * 10;
-    rotate(rot_angle);
-    setStroke(diff);
-
-    diff = diff / compressRatio;
-    line(0, 0, 0, diff);
-    translate(0, diff);
-    push();
-
-    diff = number;
-    next = number * 2;
-    collatzRecursive(next, diff);
-
-    if (number % 3 === 1) {
-        diff = -(number * 2 + 1) / 3;
-        next = (number - 1) / 3;
-        collatzRecursive(next, diff);
-    }
-
-    pop();
+function setStroke(num) {
+    Red = 255 * noise(num);
+    Green = 255 * (1 - noise(num));
+    Blue = 255 * noise(num);
+    stroke(Red, Green, Blue);
 }
 
 function collatzIterative() {
-    let numStack = [{
+    let nodeStack = [{
         "num": 1,
         "diff": 0,
         "index": 0
     }];
-    let stateMap = new Map();
-    let visited = new Map();
-    let counter = 1;
 
-    while (numStack.length > 0 && counter < 200) {
-        let obj = numStack.pop();
-        console.log(obj);
-        let num = obj["num"];
-        let index = obj["index"];
-        let diff = obj["diff"];
-        let willProceed = false;
+    // keeps track of visited indices
+    let visitedSet = new Set();
+    let indexCounter = 1;
 
-        for (let i = index + 1; i < counter; i += 1) {
-            if (typeof stateMap.get(i) == "boolean") {
-                pop();
-                stateMap.delete(i);
-            } else {
-                break;
-            }
+    while ((nodeStack.length > 0) && (nodeStack.length <= stackSizeLimit)) {
+        let node = nodeStack.pop();
+
+        // if current node has been visited then this is a backtracking step
+        if (visitedSet.has(node.index)) {
+            pop();
+            visitedSet.delete(node.index);
+            continue;
+        } else {
+            visitedSet.add(node.index);
         }
 
-        let rot_angle = diff * 10;
-        rotate(rot_angle);
-        setStroke(diff);
+        nodeStack.push(node);
 
-        diff = diff / compressRatio;
-        line(0, 0, 0, diff);
-        translate(0, diff);
+        let rot_angle = node.diff * 10;
+        rotate(rot_angle);
+        setStroke(node.diff);
+
+        let Ratio = limit / compressRatio;
+        let len = node.diff * Ratio;
+        line(0, 0, 0, len);
+        translate(0, len);
         push();
 
-        if (num * 2 < limit) {
-            let nextNum = num * 2;
-            if (typeof visited.get(nextNum) == "undefined") {
-                visited.set(nextNum, true);
-                let nextDiff = num;
-                numStack.push({
-                    "num": nextNum,
-                    "diff": nextDiff,
-                    "index": counter
-                });
-                counter += 1;
-                willProceed = true;
-            }
+        let nextNum = 0;
+        let nextDiff = 0;
+
+        // work your way up the collatz number tree
+        if ((node.num > 1) && (node.num % 3 === 1)) {
+            nextNum = (node.num - 1) / 3;
+            nextDiff = -((node.num * 2) + 1) / 3;
+            nodeStack.push({
+                "num": nextNum,
+                "diff": nextDiff,
+                "index": indexCounter
+            });
+            indexCounter += 1;
         }
 
-        if (num % 3 == 1) {
-            let nextNum = (num - 1) / 3;
-            if (typeof visited.get(nextNum) == "undefined") {
-                visited.set(nextNum, true);
-                if (nextNum > 1 && nextNum < limit) {
-                    let nextDiff = -(num * 2 + 1) / 3;
-                    numStack.push({
-                        "num": nextNum,
-                        "diff": nextDiff,
-                        "index": counter
-                    });
-                    counter += 1;
-                    willProceed = true;
-                }
-            }
-        }
-
-        if (willProceed) {
-            stateMap.set(index, true);
-        } else {
-            pop();
+        // work your way up the collatz number tree
+        if (node.num * 2 <= limit) {
+            nextNum = node.num * 2;
+            nextDiff = node.num;
+            nodeStack.push({
+                "num": nextNum,
+                "diff": nextDiff,
+                "index": indexCounter
+            });
+            indexCounter += 1;
         }
     }
 }
