@@ -235,7 +235,7 @@
   },
   {
     "name": "Collatz",
-    "desc": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga, amet?",
+    "desc": "A pattern generated using the number sequence formed by Collatz conjecture.",
     "linkUrl": "/art/collatz",
     "codeUrl": "https://editor.p5js.org/anuragnitt/sketches/2QxlA4fYZ",
     "image": "./static/images/collatz.png",
