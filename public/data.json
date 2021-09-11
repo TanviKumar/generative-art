@@ -241,5 +241,14 @@
     "image": "./static/images/collatz.png",
     "author": "Anurag Goyal",
     "tags": [0, 1, 6]
+  },
+  {
+    "name": "Jalebi",
+    "desc": "A 3D animation of the Lorenz chaotic system.",
+    "linkUrl": "/art/jalebi",
+    "codeUrl": "https://editor.p5js.org/anuragnitt/sketches/hpqeWqIJO",
+    "image": "./static/images/jalebi.png",
+    "author": "Anurag Goyal",
+    "tags": [0, 1, 3, 4, 6]
   }
 ]

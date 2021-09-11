@@ -26,6 +26,7 @@ import Tuls5 from "./art-pieces/Tuls5/Tuls5";
 import VeraMolnar from "./art-pieces/VeraMolnar/VeraMolnar";
 import Waves from "./art-pieces/Waves/Waves";
 import Collatz from "./art-pieces/Collatz/Collatz";
+import Jalebi from  "./art-pieces/Jalebi/Jalebi";
 import {
   BrowserRouter as Route,
   Switch,
@@ -115,6 +116,9 @@ export default function ArtDisplay() {
       </Route>
       <Route path={`${match.url}/collatz`}>
         <Collatz></Collatz>
+      </Route>
+      <Route path={`${match.url}/jalebi`}>
+        <Jalebi></Jalebi>
       </Route>
     </Switch>
   );
