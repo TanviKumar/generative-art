@@ -232,5 +232,23 @@
     "image": "./static/images/waves.png",
     "author": "Tanvi Kumar",
     "tags": [0, 1, 2, 6]
+  },
+  {
+    "name": "Collatz",
+    "desc": "A pattern generated using the number sequence formed by Collatz conjecture.",
+    "linkUrl": "/art/collatz",
+    "codeUrl": "https://editor.p5js.org/anuragnitt/sketches/2QxlA4fYZ",
+    "image": "./static/images/collatz.png",
+    "author": "Anurag Goyal",
+    "tags": [0, 1, 6]
+  },
+  {
+    "name": "Jalebi",
+    "desc": "A 3D animation of the Lorenz chaotic system.",
+    "linkUrl": "/art/jalebi",
+    "codeUrl": "https://editor.p5js.org/anuragnitt/sketches/hpqeWqIJO",
+    "image": "./static/images/jalebi.png",
+    "author": "Anurag Goyal",
+    "tags": [0, 1, 3, 4, 6]
   }
 ]
